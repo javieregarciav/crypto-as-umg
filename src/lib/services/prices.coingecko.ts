@@ -1,4 +1,4 @@
-import type { Coin, CoinChartPoint } from "@/lib/domain/types";
+import type { Coin } from "@/lib/domain/types";
 import type { IPriceService, Range } from "./types";
 
 const BASE = "https://api.coingecko.com/api/v3";
