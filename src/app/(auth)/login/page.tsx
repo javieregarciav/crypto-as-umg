@@ -63,9 +63,9 @@ export default function LoginPage() {
         {loading ? "Ingresando…" : "Ingresar"}
       </Button>
       <p className="text-sm text-text-muted text-center">
-        ¿No tenés cuenta?{" "}
+        ¿No tienes cuenta?{" "}
         <Link href="/register" className="text-brand hover:underline">
-          Registrate
+          Regístrate
         </Link>
       </p>
     </form>

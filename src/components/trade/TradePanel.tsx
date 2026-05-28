@@ -69,7 +69,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
     setError(null);
     setOk(null);
     if (amountCoin <= 0) {
-      setError("Ingresá una cantidad.");
+      setError("Ingresa una cantidad.");
       return;
     }
     setPending(true);
@@ -105,7 +105,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
             "py-3 text-sm font-semibold transition",
             side === "BUY"
               ? "bg-up text-black"
-              : "bg-bg-elev text-text-muted hover:text-text"
+              : "bg-white/[0.03] text-text-muted hover:text-text"
           )}
         >
           Comprar
@@ -116,7 +116,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
             "py-3 text-sm font-semibold transition",
             side === "SELL"
               ? "bg-down text-white"
-              : "bg-bg-elev text-text-muted hover:text-text"
+              : "bg-white/[0.03] text-text-muted hover:text-text"
           )}
         >
           Vender
@@ -126,7 +126,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
       <div className="p-5 space-y-4">
         <div className="flex items-center justify-between text-xs">
           <span className="text-text-muted">
-            {side === "BUY" ? "Saldo USD" : `Tenés`}
+            {side === "BUY" ? "Saldo USD" : `Tienes`}
           </span>
           <span className="num">
             {side === "BUY"
@@ -142,7 +142,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
               className={cn(
                 "px-2 py-1 rounded",
                 mode === "USD"
-                  ? "bg-bg-hover text-text"
+                  ? "bg-white/10 text-text"
                   : "text-text-muted hover:text-text"
               )}
             >
@@ -153,7 +153,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
               className={cn(
                 "px-2 py-1 rounded uppercase",
                 mode === "COIN"
-                  ? "bg-bg-hover text-text"
+                  ? "bg-white/10 text-text"
                   : "text-text-muted hover:text-text"
               )}
             >
@@ -174,7 +174,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
               <button
                 key={p}
                 onClick={() => setPct(p)}
-                className="flex-1 text-xs py-1 rounded bg-bg-hover hover:bg-border text-text-muted hover:text-text transition"
+                className="flex-1 text-xs py-1 rounded bg-white/5 hover:bg-white/10 text-text-muted hover:text-text transition"
               >
                 {p * 100}%
               </button>

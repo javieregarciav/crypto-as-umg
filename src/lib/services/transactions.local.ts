@@ -49,7 +49,7 @@ export const transactionsLocal: ITransactionService = {
       wallet.fiatBalanceUSD = +(wallet.fiatBalanceUSD - totalUSD).toFixed(2);
     } else {
       if (holding.amount < amountCoin) {
-        throw new Error(`No tenés suficiente ${coinSymbol.toUpperCase()}.`);
+        throw new Error(`No tienes suficiente ${coinSymbol.toUpperCase()}.`);
       }
       holding.amount = +(holding.amount - amountCoin).toFixed(10);
       if (holding.amount === 0) holding.avgBuyPriceUSD = 0;

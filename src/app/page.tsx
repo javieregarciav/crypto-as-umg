@@ -11,7 +11,7 @@ export default function Home() {
       </h1>
       <p className="text-text-muted max-w-xl mb-8">
         Simulador de compra y venta de criptomonedas con precios reales de
-        CoinGecko. Operá sin riesgo, aprendé cómo funciona un exchange.
+        CoinGecko. Opera sin riesgo, aprende cómo funciona un exchange.
       </p>
       <div className="flex gap-3">
         <Link

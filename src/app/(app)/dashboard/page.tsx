@@ -29,63 +29,99 @@ export default function DashboardPage() {
   const pnlUp = p.totalPnlUSD >= 0;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <p className="text-sm text-text-muted">Hola, {user?.name} 👋</p>
-        <h1 className="text-2xl font-bold">Tu portfolio</h1>
+    <div className="space-y-8">
+      {/* Hero with ghost wordmark */}
+      <div className="relative">
+        <div
+          aria-hidden
+          className="wordmark absolute -top-1 left-0 right-0 text-[48px] sm:text-[68px] lg:text-[84px] -z-10"
+        >
+          Dashboard
+        </div>
+        <div className="relative pt-4 sm:pt-6 lg:pt-8 flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
+              Hola, {user?.name}
+            </p>
+            <h1 className="text-3xl font-bold mt-1">Tu portfolio</h1>
+          </div>
+          <div className="pill-group">
+            <button data-active="true">24h</button>
+            <button>Semana</button>
+            <button>Mes</button>
+            <button>Año</button>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card>
-          <CardTitle>Valor total</CardTitle>
-          <div className="text-2xl font-bold num">
-            {fmtUSD(p.totalValueUSD)}
-          </div>
-          <div className="text-xs text-text-muted mt-1">
-            USD + criptomonedas
-          </div>
-        </Card>
-        <Card>
-          <CardTitle>Saldo USD</CardTitle>
-          <div className="text-2xl font-bold num flex items-center gap-2">
-            <WalletIcon size={18} className="text-text-muted" />
-            {fmtUSD(p.wallet?.fiatBalanceUSD ?? 0)}
-          </div>
-          <div className="text-xs text-text-muted mt-1">
-            Disponible para comprar
-          </div>
-        </Card>
-        <Card>
-          <CardTitle>Valor en cripto</CardTitle>
-          <div className="text-2xl font-bold num">
-            {fmtUSD(p.holdingsValueUSD)}
-          </div>
-          <div className="text-xs text-text-muted mt-1">
-            {p.rows.length} {p.rows.length === 1 ? "activo" : "activos"}
-          </div>
-        </Card>
-        <Card>
-          <CardTitle>Ganancia / Pérdida</CardTitle>
+      {/* Bento: 1 wide hero KPI + 3 small stat tiles */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <Card className="lg:col-span-2 relative overflow-hidden">
           <div
-            className={cn(
-              "text-2xl font-bold num flex items-center gap-2",
-              pnlUp ? "text-up" : "text-down"
-            )}
-          >
-            {pnlUp ? <TrendingUp size={18} /> : <TrendingDown size={18} />}
-            {fmtUSD(p.totalPnlUSD)}
+            aria-hidden
+            className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-brand/20 blur-3xl"
+          />
+          <div className="relative">
+            <CardTitle>Valor total</CardTitle>
+            <div className="flex items-end gap-4 flex-wrap">
+              <div className="text-5xl font-bold num tracking-tight">
+                {fmtUSD(p.totalValueUSD)}
+              </div>
+              <div
+                className={cn(
+                  "flex items-center gap-1 text-sm num pb-2",
+                  pnlUp ? "text-up" : "text-down"
+                )}
+              >
+                {pnlUp ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
+                {fmtUSD(p.totalPnlUSD)}
+                <span className="text-text-muted ml-1">
+                  ({p.totalPnlPct >= 0 ? "+" : ""}
+                  {p.totalPnlPct.toFixed(2)}%)
+                </span>
+              </div>
+            </div>
+            <p className="text-xs text-text-muted mt-2">
+              USD + criptomonedas · actualizado en vivo
+            </p>
           </div>
-          <PriceChange pct={p.totalPnlPct} className="text-xs mt-1" />
         </Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+          <Card className="!p-4">
+            <CardTitle>Saldo USD</CardTitle>
+            <div className="text-xl font-bold num flex items-center gap-2">
+              <WalletIcon size={16} className="text-brand" />
+              {fmtUSD(p.wallet?.fiatBalanceUSD ?? 0)}
+            </div>
+            <div className="text-[11px] text-text-muted mt-1">
+              Disponible para comprar
+            </div>
+          </Card>
+          <Card className="!p-4">
+            <CardTitle>En cripto</CardTitle>
+            <div className="text-xl font-bold num">
+              {fmtUSD(p.holdingsValueUSD)}
+            </div>
+            <div className="text-[11px] text-text-muted mt-1">
+              {p.rows.length} {p.rows.length === 1 ? "activo" : "activos"}
+            </div>
+          </Card>
+        </div>
       </div>
 
+      {/* Positions + donut */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card className="lg:col-span-2">
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="font-semibold">Tus posiciones</h2>
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="font-semibold">Tus posiciones</h2>
+              <p className="text-[11px] text-text-muted">
+                Top 5 por valor de mercado
+              </p>
+            </div>
             <Link
               href="/portfolio"
-              className="text-xs text-text-muted hover:text-text flex items-center gap-1"
+              className="text-xs text-text-muted hover:text-brand flex items-center gap-1 transition"
             >
               Ver todo <ArrowRight size={12} />
             </Link>
@@ -110,7 +146,7 @@ export default function DashboardPage() {
                   {p.rows.slice(0, 5).map((r) => (
                     <tr
                       key={r.holding.coinId}
-                      className="border-t border-border"
+                      className="glass-row border-t border-white/5"
                     >
                       <td className="p-3">
                         <Link
@@ -187,20 +223,20 @@ export default function DashboardPage() {
 }
 
 const PALETTE = [
-  "#f0b90b",
-  "#0ecb81",
+  "#a855f7",
+  "#22c55e",
   "#3b82f6",
   "#a855f7",
   "#f97316",
   "#ec4899",
   "#06b6d4",
-  "#84cc16",
+  "#eab308",
 ];
 
 function EmptyHoldings() {
   return (
     <div className="text-center py-10 text-sm text-text-muted">
-      Todavía no tenés posiciones.
+      Todavía no tienes posiciones.
       <div className="mt-3">
         <Link
           href="/market"

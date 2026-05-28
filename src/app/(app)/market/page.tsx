@@ -53,10 +53,10 @@ export default function MarketPage() {
         </div>
       )}
 
-      <div className="rounded-lg border border-border overflow-hidden bg-bg-elev/40">
+      <div className="glass rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase tracking-wider bg-bg-elev/60">
+            <thead className="text-xs text-text-muted uppercase tracking-wider bg-white/[0.03] backdrop-blur">
               <tr>
                 <th className="text-left p-3 w-12">#</th>
                 <th className="text-left p-3">Nombre</th>
@@ -76,7 +76,7 @@ export default function MarketPage() {
             <tbody>
               {loading && coins.length === 0 ? (
                 Array.from({ length: 10 }).map((_, i) => (
-                  <tr key={i} className="border-t border-border">
+                  <tr key={i} className="border-t border-white/5">
                     <td colSpan={7} className="p-3">
                       <div className="h-6 bg-bg-hover/50 rounded animate-pulse" />
                     </td>
@@ -95,7 +95,7 @@ export default function MarketPage() {
                 filtered.map((c) => (
                   <tr
                     key={c.id}
-                    className="border-t border-border hover:bg-bg-hover/50 transition"
+                    className="glass-row border-t border-white/5"
                   >
                     <td className="p-3 text-text-muted num">
                       {c.marketCapRank}

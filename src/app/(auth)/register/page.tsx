@@ -90,9 +90,9 @@ export default function RegisterPage() {
         {loading ? "Creando…" : "Crear cuenta"}
       </Button>
       <p className="text-sm text-text-muted text-center">
-        ¿Ya tenés cuenta?{" "}
+        ¿Ya tienes cuenta?{" "}
         <Link href="/login" className="text-brand hover:underline">
-          Ingresá
+          Ingresa
         </Link>
       </p>
     </form>

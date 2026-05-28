@@ -7,12 +7,14 @@ const button = cva(
   {
     variants: {
       variant: {
-        primary: "bg-brand text-black hover:bg-brand-hover",
-        secondary: "bg-bg-hover text-text hover:bg-border",
-        outline: "border border-border text-text hover:bg-bg-hover",
-        ghost: "text-text-muted hover:text-text hover:bg-bg-hover",
-        up: "bg-up text-black hover:opacity-90",
-        down: "bg-down text-white hover:opacity-90",
+        primary:
+          "bg-brand text-white hover:bg-brand-hover shadow-[0_6px_24px_-6px_rgba(168,85,247,0.6)]",
+        secondary: "glass-subtle glass-hover text-text",
+        outline:
+          "border border-white/10 text-text hover:bg-white/5 backdrop-blur-md",
+        ghost: "text-text-muted hover:text-text hover:bg-white/5",
+        up: "bg-up text-black hover:opacity-90 shadow-[0_4px_16px_-4px_rgba(34,197,94,0.45)]",
+        down: "bg-down text-white hover:opacity-90 shadow-[0_4px_16px_-4px_rgba(239,68,68,0.45)]",
       },
       size: {
         sm: "h-8 px-3",

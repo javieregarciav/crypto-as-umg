@@ -4,14 +4,14 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { fmtUSD } from "@/lib/utils";
 
 const COLORS = [
-  "#f0b90b",
-  "#0ecb81",
+  "#a855f7",
+  "#22c55e",
   "#3b82f6",
   "#a855f7",
   "#f97316",
   "#ec4899",
   "#06b6d4",
-  "#84cc16",
+  "#eab308",
 ];
 
 export interface DonutDatum {
@@ -30,7 +30,7 @@ export function PortfolioDonut({ data }: { data: DonutDatum[] }) {
           innerRadius={55}
           outerRadius={90}
           paddingAngle={2}
-          stroke="#0b0e11"
+          stroke="#0a0a0b"
         >
           {data.map((_, i) => (
             <Cell key={i} fill={COLORS[i % COLORS.length]} />
@@ -38,8 +38,8 @@ export function PortfolioDonut({ data }: { data: DonutDatum[] }) {
         </Pie>
         <Tooltip
           contentStyle={{
-            background: "#161a1e",
-            border: "1px solid #2b3139",
+            background: "#121315",
+            border: "1px solid #26282c",
             borderRadius: 6,
             fontSize: 12,
           }}

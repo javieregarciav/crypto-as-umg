@@ -22,7 +22,7 @@ const items = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="hidden md:flex w-60 shrink-0 flex-col border-r border-border bg-bg-elev/40">
+    <aside className="hidden md:flex w-60 shrink-0 flex-col glass-strong !border-y-0 !border-l-0 !rounded-none">
       <Link
         href="/dashboard"
         className="px-6 py-5 text-2xl font-bold border-b border-border"
@@ -40,8 +40,8 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition",
                 active
-                  ? "bg-bg-hover text-text"
-                  : "text-text-muted hover:text-text hover:bg-bg-hover/50"
+                  ? "glass-accent text-text"
+                  : "text-text-muted hover:text-text hover:bg-white/5"
               )}
             >
               <Icon size={18} />

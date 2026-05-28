@@ -18,7 +18,7 @@ export function PriceChart({
   data: CoinChartPoint[];
   up: boolean;
 }) {
-  const color = up ? "#0ecb81" : "#f6465d";
+  const color = up ? "#22c55e" : "#ef4444";
   return (
     <ResponsiveContainer width="100%" height={360}>
       <AreaChart data={data} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
@@ -30,7 +30,7 @@ export function PriceChart({
         </defs>
         <XAxis
           dataKey="t"
-          tick={{ fill: "#848e9c", fontSize: 11 }}
+          tick={{ fill: "#8b8d92", fontSize: 11 }}
           tickFormatter={(t) =>
             new Date(t).toLocaleDateString("es", {
               month: "short",
@@ -38,19 +38,19 @@ export function PriceChart({
             })
           }
           minTickGap={48}
-          stroke="#2b3139"
+          stroke="#26282c"
         />
         <YAxis
           dataKey="price"
           domain={["auto", "auto"]}
-          tick={{ fill: "#848e9c", fontSize: 11 }}
+          tick={{ fill: "#8b8d92", fontSize: 11 }}
           tickFormatter={(v) => fmtPrice(v)}
           width={80}
-          stroke="#2b3139"
+          stroke="#26282c"
         />
         <Tooltip
           contentStyle={{
-            background: "#161a1e",
+            background: "#121315",
             border: "1px solid #2b3139",
             borderRadius: 6,
             fontSize: 12,

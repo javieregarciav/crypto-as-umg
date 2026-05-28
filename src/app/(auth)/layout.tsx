@@ -10,7 +10,7 @@ export default function AuthLayout({
       <Link href="/" className="text-3xl font-bold mb-8">
         Crypto<span className="text-brand">UMG</span>
       </Link>
-      <div className="w-full max-w-sm border border-border bg-bg-elev/60 rounded-lg p-6">
+      <div className="w-full max-w-sm glass-strong rounded-2xl p-6">
         {children}
       </div>
       <p className="text-xs text-text-subtle mt-6">

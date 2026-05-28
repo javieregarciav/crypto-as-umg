@@ -28,14 +28,14 @@ export function Header() {
   }, [user]);
 
   return (
-    <header className="h-14 border-b border-border bg-bg-elev/40 px-4 md:px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-30 h-14 glass-strong !border-x-0 !border-t-0 px-4 md:px-6 flex items-center justify-between">
       <div className="md:hidden text-lg font-bold">
         Crypto<span className="text-brand">UMG</span>
       </div>
       <div className="flex-1" />
       <div className="flex items-center gap-3">
         {balance !== null && (
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-md bg-bg-hover border border-border">
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-md glass-subtle">
             <WalletIcon size={14} className="text-text-muted" />
             <span className="num text-sm font-medium">
               {fmtUSD(balance)}

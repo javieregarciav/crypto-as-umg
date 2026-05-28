@@ -22,7 +22,7 @@ export default function PortfolioPage() {
       <Card className="p-0 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase bg-bg-elev/60">
+            <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
               <tr>
                 <th className="text-left p-3">Activo</th>
                 <th className="text-right p-3">Cantidad</th>
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
               ) : p.rows.length === 0 ? (
                 <tr>
                   <td colSpan={8} className="p-10 text-center text-text-muted">
-                    No tenés posiciones todavía.{" "}
+                    No tienes posiciones todavía.{" "}
                     <Link
                       href="/market"
                       className="text-brand hover:underline"
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
                 p.rows.map((r) => (
                   <tr
                     key={r.holding.coinId}
-                    className="border-t border-border hover:bg-bg-hover/40"
+                    className="glass-row border-t border-white/5"
                   >
                     <td className="p-3">
                       <div className="flex items-center gap-3">
