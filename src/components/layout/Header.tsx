@@ -61,7 +61,7 @@ export function Header() {
         ) : (
           <Link
             href="/login"
-            className="px-4 py-1.5 text-sm rounded-md bg-brand text-black font-semibold hover:bg-brand-hover"
+            className="glass-brand px-4 py-1.5 text-sm rounded-md text-white font-semibold"
           >
             Iniciar sesión
           </Link>

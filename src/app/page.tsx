@@ -62,7 +62,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-9">
           <Link
             href="/register"
-            className="inline-flex items-center justify-center gap-2 bg-brand text-white hover:bg-brand-hover font-medium px-6 py-3 rounded-full transition"
+            className="glass-brand inline-flex items-center justify-center gap-2 text-white font-medium px-6 py-3 rounded-full"
           >
             Empieza gratis
             <ArrowRight size={16} />
@@ -136,7 +136,7 @@ export default function Home() {
         </p>
         <Link
           href="/register"
-          className="inline-flex items-center justify-center gap-2 bg-brand text-white hover:bg-brand-hover font-medium px-6 py-3 rounded-full transition mt-8"
+          className="glass-brand inline-flex items-center justify-center gap-2 text-white font-medium px-6 py-3 rounded-full mt-8"
         >
           Crea tu cuenta
           <ArrowRight size={16} />
