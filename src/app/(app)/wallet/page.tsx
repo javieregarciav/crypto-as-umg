@@ -10,6 +10,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardTitle } from "@/components/ui/Card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/Input";
 import type { Holding, Wallet } from "@/lib/domain/types";
 import { useSession } from "@/lib/hooks/useSession";
@@ -189,64 +196,58 @@ export default function WalletPage() {
         </div>
       </Card>
 
-      {action && (
-        <ActionModal action={action} onClose={() => setAction(null)} />
-      )}
-    </div>
-  );
-}
-
-function ActionModal({
-  action,
-  onClose,
-}: {
-  action: Action;
-  onClose: () => void;
-}) {
-  const cfg = ACTIONS[action];
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-      onClick={onClose}
-    >
-      <div
-        className="w-full max-w-sm glass-strong rounded-2xl p-6 space-y-4"
-        onClick={(e) => e.stopPropagation()}
+      <Dialog
+        open={action !== null}
+        onOpenChange={(o) => !o && setAction(null)}
       >
-        <h2 className="text-lg font-semibold">{cfg.title}</h2>
-        <p className="text-xs text-text-muted">{cfg.help}</p>
+        <DialogContent className="max-w-sm">
+          {action && (
+            <>
+              <DialogHeader>
+                <DialogTitle>{ACTIONS[action].title}</DialogTitle>
+                <DialogDescription>{ACTIONS[action].help}</DialogDescription>
+              </DialogHeader>
 
-        {action === "transfer" && (
-          <div className="space-y-1">
-            <label className="text-xs text-text-muted">
-              Correo del destinatario
-            </label>
-            <Input type="email" placeholder="destinatario@correo.com" />
-          </div>
-        )}
-        <div className="space-y-1">
-          <label className="text-xs text-text-muted">Monto (USD)</label>
-          <Input type="number" placeholder="0.00" />
-        </div>
+              <div className="space-y-4">
+                {action === "transfer" && (
+                  <div className="space-y-1">
+                    <label className="text-xs text-text-muted">
+                      Correo del destinatario
+                    </label>
+                    <Input type="email" placeholder="destinatario@correo.com" />
+                  </div>
+                )}
+                <div className="space-y-1">
+                  <label className="text-xs text-text-muted">Monto (USD)</label>
+                  <Input type="number" placeholder="0.00" />
+                </div>
 
-        <div className="flex items-start gap-2 text-[11px] text-text-subtle bg-white/[0.03] rounded-md p-2">
-          <Info size={13} className="shrink-0 mt-0.5" />
-          <span>Operación teórica — se habilitará en la Fase 2.</span>
-        </div>
+                <div className="flex items-start gap-2 text-[11px] text-text-subtle bg-white/[0.03] rounded-md p-2">
+                  <Info size={13} className="shrink-0 mt-0.5" />
+                  <span>Operación teórica — se habilitará en la Fase 2.</span>
+                </div>
 
-        <div className="flex gap-2 pt-1">
-          <Button variant="outline" className="flex-1" onClick={onClose}>
-            Cancelar
-          </Button>
-          <Button
-            className="flex-1"
-            onClick={onClose}
-            title="Disponible en Fase 2"
-          >
-            {cfg.cta}
-          </Button>
-        </div>
-      </div>
+                <div className="flex gap-2 pt-1">
+                  <Button
+                    variant="outline"
+                    className="flex-1"
+                    onClick={() => setAction(null)}
+                  >
+                    Cancelar
+                  </Button>
+                  <Button
+                    className="flex-1"
+                    onClick={() => setAction(null)}
+                    title="Disponible en Fase 2"
+                  >
+                    {ACTIONS[action].cta}
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -14,6 +14,12 @@ import {
   Users,
 } from "lucide-react";
 import { Card, CardTitle } from "@/components/ui/Card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 import { cn, fmtUSD } from "@/lib/utils";
 
 type Tab = "users" | "transactions" | "reports";
@@ -103,25 +109,21 @@ export default function AdminPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 glass-subtle rounded-md p-1 w-fit">
-        {TABS.map(({ key, label, icon: Icon }) => (
-          <button
-            key={key}
-            onClick={() => setTab(key)}
-            className={cn(
-              "flex items-center gap-2 px-3 py-1.5 text-xs rounded transition",
-              tab === key
-                ? "bg-white/10 text-text"
-                : "text-text-muted hover:text-text"
-            )}
-          >
-            <Icon size={14} />
-            {label}
-          </button>
-        ))}
-      </div>
+      <Tabs
+        value={tab}
+        onValueChange={(v) => setTab(v as Tab)}
+        className="space-y-5"
+      >
+        <TabsList>
+          {TABS.map(({ key, label, icon: Icon }) => (
+            <TabsTrigger key={key} value={key}>
+              <Icon size={14} />
+              {label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-      {tab === "users" && (
+        <TabsContent value="users">
         <Card className="p-0 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -208,9 +210,9 @@ export default function AdminPage() {
             </table>
           </div>
         </Card>
-      )}
+        </TabsContent>
 
-      {tab === "transactions" && (
+        <TabsContent value="transactions">
         <Card className="p-0 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -250,9 +252,9 @@ export default function AdminPage() {
             </table>
           </div>
         </Card>
-      )}
+        </TabsContent>
 
-      {tab === "reports" && (
+        <TabsContent value="reports">
         <div className="grid gap-4 md:grid-cols-2">
           <Card>
             <CardTitle>Actividad de usuarios</CardTitle>
@@ -285,7 +287,8 @@ export default function AdminPage() {
             </div>
           </Card>
         </div>
-      )}
+        </TabsContent>
+      </Tabs>
 
       <div className="flex items-start gap-2 text-[11px] text-text-subtle">
         <Ban size={13} className="shrink-0 mt-0.5" />

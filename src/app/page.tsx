@@ -61,7 +61,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-9">
           <Link
             href="/register"
-            className="glass-brand inline-flex items-center justify-center gap-2 text-black font-semibold px-6 py-3 rounded-full"
+            className="glass-brand inline-flex items-center justify-center gap-2 text-white font-semibold px-6 py-3 rounded-full"
           >
             Empieza gratis
             <ArrowRight size={16} />
@@ -135,7 +135,7 @@ export default function Home() {
         </p>
         <Link
           href="/register"
-          className="glass-brand inline-flex items-center justify-center gap-2 text-black font-semibold px-6 py-3 rounded-full mt-8"
+          className="glass-brand inline-flex items-center justify-center gap-2 text-white font-semibold px-6 py-3 rounded-full mt-8"
         >
           Crea tu cuenta
           <ArrowRight size={16} />
@@ -292,8 +292,8 @@ function DashboardMock() {
       >
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#00e676" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#00e676" stopOpacity="0" />
+            <stop offset="0%" stopColor="#0ea271" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#0ea271" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path
@@ -303,7 +303,7 @@ function DashboardMock() {
         <path
           d="M0 60 L40 52 L80 56 L120 38 L160 44 L200 26 L240 30 L280 16 L320 20"
           fill="none"
-          stroke="#00e676"
+          stroke="#0ea271"
           strokeWidth="1.5"
         />
       </svg>

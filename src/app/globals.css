@@ -12,12 +12,12 @@ body {
   background-image:
     radial-gradient(
       ellipse 90% 60% at 50% -10%,
-      rgba(0, 180, 90, 0.15) 0%,
+      rgba(10, 110, 75, 0.16) 0%,
       transparent 60%
     ),
     radial-gradient(
       ellipse 60% 50% at 100% 100%,
-      rgba(0, 230, 118, 0.07) 0%,
+      rgba(14, 162, 113, 0.07) 0%,
       transparent 65%
     );
   background-attachment: fixed;
@@ -72,9 +72,9 @@ body > * {
   .text-gradient {
     background: linear-gradient(
       125deg,
-      #5cff9d 0%,
-      #00e676 50%,
-      #00a152 100%
+      #34d8a0 0%,
+      #0ea271 50%,
+      #076046 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -135,32 +135,32 @@ body > * {
   .glass-accent {
     background: linear-gradient(
       135deg,
-      rgba(0, 230, 118, 0.12) 0%,
-      rgba(0, 230, 118, 0.03) 100%
+      rgba(14, 162, 113, 0.12) 0%,
+      rgba(14, 162, 113, 0.03) 100%
     ),
       rgba(10, 8, 14, 0.5);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(0, 230, 118, 0.25);
+    border: 1px solid rgba(14, 162, 113, 0.25);
     box-shadow:
       inset 0 1px 0 0 rgba(255, 255, 255, 0.1),
-      0 8px 32px -8px rgba(0, 230, 118, 0.3);
+      0 8px 32px -8px rgba(14, 162, 113, 0.3);
   }
 
   /* Botón morado con liquid glass */
   .glass-brand {
     background: linear-gradient(
       135deg,
-      rgba(0, 230, 118, 0.85) 0%,
-      rgba(0, 200, 83, 0.7) 100%
+      rgba(14, 162, 113, 0.85) 0%,
+      rgba(11, 138, 96, 0.7) 100%
     );
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid rgba(150, 255, 200, 0.4);
+    border: 1px solid rgba(120, 220, 185, 0.4);
     box-shadow:
       inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
       inset 0 -1px 0 0 rgba(0, 0, 0, 0.2),
-      0 8px 24px -8px rgba(0, 230, 118, 0.55);
+      0 8px 24px -8px rgba(14, 162, 113, 0.55);
     transition:
       background 180ms ease,
       box-shadow 180ms ease;
@@ -168,12 +168,12 @@ body > * {
   .glass-brand:hover {
     background: linear-gradient(
       135deg,
-      rgba(0, 230, 118, 0.98) 0%,
-      rgba(0, 200, 83, 0.88) 100%
+      rgba(14, 162, 113, 0.98) 0%,
+      rgba(11, 138, 96, 0.88) 100%
     );
     box-shadow:
       inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
-      0 10px 28px -8px rgba(0, 230, 118, 0.7);
+      0 10px 28px -8px rgba(14, 162, 113, 0.7);
   }
 
   /* Ghost editorial wordmark behind page heroes */
@@ -216,9 +216,9 @@ body > * {
     color: rgba(255, 255, 255, 0.85);
   }
   .pill-group > button[data-active="true"] {
-    background: linear-gradient(135deg, #00e676, #00b894);
+    background: linear-gradient(135deg, #0ea271, #0b7a5e);
     color: white;
-    box-shadow: 0 4px 14px -4px rgba(0, 230, 118, 0.6);
+    box-shadow: 0 4px 14px -4px rgba(14, 162, 113, 0.6);
   }
 
   /* Table row glass — applies on hover for shimmer */
@@ -228,9 +228,9 @@ body > * {
   .glass-row:hover {
     background: linear-gradient(
       90deg,
-      rgba(0, 230, 118, 0.08) 0%,
+      rgba(14, 162, 113, 0.08) 0%,
       rgba(255, 255, 255, 0.04) 50%,
-      rgba(0, 230, 118, 0.06) 100%
+      rgba(14, 162, 113, 0.06) 100%
     );
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);

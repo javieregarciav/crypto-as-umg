@@ -18,7 +18,7 @@ export function PriceChart({
   data: CoinChartPoint[];
   up: boolean;
 }) {
-  const color = up ? "#22c55e" : "#ef4444";
+  const color = up ? "#10b981" : "#ef4444";
   return (
     <ResponsiveContainer width="100%" height={360}>
       <AreaChart data={data} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>

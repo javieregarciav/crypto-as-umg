@@ -4,10 +4,10 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { fmtUSD } from "@/lib/utils";
 
 const COLORS = [
-  "#00e676",
+  "#0ea271",
   "#14b8a6",
   "#3b82f6",
-  "#a3e635",
+  "#2dd4bf",
   "#f97316",
   "#ec4899",
   "#06b6d4",

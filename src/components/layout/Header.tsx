@@ -2,9 +2,17 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { LogOut, Wallet as WalletIcon } from "lucide-react";
+import { LogOut, User as UserIcon, Wallet as WalletIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useSession } from "@/lib/hooks/useSession";
 import { services } from "@/lib/services";
 import { fmtUSD } from "@/lib/utils";
@@ -44,25 +52,40 @@ export function Header() {
           </div>
         )}
         {user ? (
-          <>
-            <div className="text-sm text-text-muted hidden sm:block">
-              {user.name}
-            </div>
-            <button
-              onClick={async () => {
-                await logout();
-                router.push("/login");
-              }}
-              className="p-2 rounded-md hover:bg-bg-hover text-text-muted hover:text-down transition"
-              title="Cerrar sesión"
-            >
-              <LogOut size={16} />
-            </button>
-          </>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-2 rounded-full pl-1 pr-3 py-1 hover:bg-white/5 transition focus:outline-none">
+              <span className="size-7 rounded-full glass-accent flex items-center justify-center text-brand text-xs font-bold uppercase">
+                {user.name.slice(0, 1)}
+              </span>
+              <span className="text-sm text-text-muted hidden sm:block">
+                {user.name.split(" ")[0]}
+              </span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>{user.email}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link href="/profile">
+                  <UserIcon size={15} />
+                  Perfil
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="text-down hover:text-down"
+                onSelect={async () => {
+                  await logout();
+                  router.push("/login");
+                }}
+              >
+                <LogOut size={15} />
+                Cerrar sesión
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         ) : (
           <Link
             href="/login"
-            className="glass-brand px-4 py-1.5 text-sm rounded-md text-black font-semibold"
+            className="glass-brand px-4 py-1.5 text-sm rounded-md text-white font-semibold"
           >
             Iniciar sesión
           </Link>

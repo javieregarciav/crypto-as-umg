@@ -25,12 +25,12 @@ const config: Config = {
           subtle: "#5a5c61",
         },
         brand: {
-          DEFAULT: "#00e676",
-          hover: "#00c853",
+          DEFAULT: "#0ea271",
+          hover: "#0b8a60",
         },
         up: {
-          DEFAULT: "#22c55e",
-          bg: "rgba(34,197,94,0.1)",
+          DEFAULT: "#10b981",
+          bg: "rgba(16,185,129,0.12)",
         },
         down: {
           DEFAULT: "#ef4444",
