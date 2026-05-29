@@ -46,6 +46,7 @@ const config: Config = {
           "system-ui",
           "sans-serif",
         ],
+        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
     },
