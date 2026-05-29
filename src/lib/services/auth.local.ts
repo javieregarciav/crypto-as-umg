@@ -11,6 +11,23 @@ import {
 
 const SEED_BALANCE = 10_000;
 
+// Usuario demo hardcodeado — siempre disponible para iniciar sesión,
+// incluso si el localStorage del navegador está vacío (p. ej. en Vercel).
+//   correo:      demo@agora.gt
+//   contraseña:  demo1234
+export const DEMO_CREDENTIALS = {
+  email: "demo@agora.gt",
+  password: "demo1234",
+};
+
+const DEMO_USER: User = {
+  id: "demo-user-0001",
+  email: DEMO_CREDENTIALS.email,
+  name: "Usuario Demo",
+  passwordHash: hashPassword(DEMO_CREDENTIALS.password),
+  createdAt: "2026-05-01T00:00:00.000Z",
+};
+
 function ensureWalletFor(userId: string) {
   const wallets = read<Wallet[]>(STORAGE_KEYS.wallets, []);
   if (!wallets.some((w) => w.userId === userId)) {
@@ -19,8 +36,19 @@ function ensureWalletFor(userId: string) {
   }
 }
 
+// Garantiza que el usuario demo exista en el "almacén" local. Idempotente.
+function ensureSeed() {
+  const users = read<User[]>(STORAGE_KEYS.users, []);
+  if (!users.some((u) => u.email === DEMO_USER.email)) {
+    users.push(DEMO_USER);
+    write(STORAGE_KEYS.users, users);
+  }
+  ensureWalletFor(DEMO_USER.id);
+}
+
 export const authLocal: IAuthService = {
   async register({ email, password, name }) {
+    ensureSeed();
     const users = read<User[]>(STORAGE_KEYS.users, []);
     const emailLc = email.trim().toLowerCase();
     if (users.some((u) => u.email === emailLc)) {
@@ -41,6 +69,7 @@ export const authLocal: IAuthService = {
   },
 
   async login(email, password) {
+    ensureSeed();
     const users = read<User[]>(STORAGE_KEYS.users, []);
     const emailLc = email.trim().toLowerCase();
     const user = users.find((u) => u.email === emailLc);
@@ -57,6 +86,7 @@ export const authLocal: IAuthService = {
   },
 
   async currentUser() {
+    ensureSeed();
     const session = read<{ userId?: string } | null>(STORAGE_KEYS.session, null);
     if (!session?.userId) return null;
     const users = read<User[]>(STORAGE_KEYS.users, []);
