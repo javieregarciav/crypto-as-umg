@@ -68,13 +68,14 @@ body > * {
     font-family: var(--font-mono);
   }
 
-  /* Degradado en el texto de los títulos grandes (blanco -> gris) */
+  /* Degradado en el texto de los títulos grandes (colores de marca) */
   .text-gradient {
     background: linear-gradient(
-      180deg,
+      125deg,
       #ffffff 0%,
-      #f4f4f5 38%,
-      rgba(244, 244, 245, 0.45) 100%
+      #f4f4f5 30%,
+      #a855f7 75%,
+      #d946ef 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
