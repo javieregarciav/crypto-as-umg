@@ -52,19 +52,19 @@ export default function Home() {
           Simulador educativo · Universidad Mariano Gálvez
         </span>
         <h1 className="font-display text-gradient text-5xl md:text-[3.75rem] leading-[1.05] font-medium tracking-tight mt-6 text-balance pb-1">
-          Aprendé a operar el mercado cripto sin arriesgar tu dinero
+          Aprende a operar el mercado cripto sin arriesgar tu dinero
         </h1>
         <p className="text-text-muted text-lg max-w-xl mx-auto mt-7 leading-relaxed">
           Agora —del griego ἀγορά, «mercado»— es un simulador de compra y venta
-          de criptomonedas con precios reales de CoinGecko. Practicá con saldo
-          virtual y entendé cómo funciona un exchange.
+          de criptomonedas con precios reales de CoinGecko. Practica con saldo
+          virtual y entiende cómo funciona un exchange.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-9">
           <Link
             href="/register"
             className="inline-flex items-center justify-center gap-2 bg-brand text-white hover:bg-brand-hover font-medium px-6 py-3 rounded-full transition"
           >
-            Empezá gratis
+            Empieza gratis
             <ArrowRight size={16} />
           </Link>
           <Link
@@ -100,7 +100,7 @@ export default function Home() {
       <section id="funciones" className="max-w-5xl mx-auto px-5 pb-28">
         <div className="text-center mb-14">
           <h2 className="font-display text-gradient text-3xl md:text-4xl font-medium tracking-tight pb-1">
-            Todo lo que necesitás para practicar
+            Todo lo que necesitas para practicar
           </h2>
           <p className="text-text-muted mt-4 max-w-lg mx-auto">
             Las mismas piezas de un exchange real, en un entorno seguro y
@@ -132,13 +132,13 @@ export default function Home() {
           Tu cuenta demo con $10,000 USD virtuales te espera
         </h2>
         <p className="text-text-muted mt-4">
-          Sin tarjetas ni dinero real. Solo aprendé.
+          Sin tarjetas ni dinero real. Solo aprende.
         </p>
         <Link
           href="/register"
           className="inline-flex items-center justify-center gap-2 bg-brand text-white hover:bg-brand-hover font-medium px-6 py-3 rounded-full transition mt-8"
         >
-          Creá tu cuenta
+          Crea tu cuenta
           <ArrowRight size={16} />
         </Link>
       </section>
@@ -198,14 +198,14 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     title: "Sin riesgo real",
-    desc: "Operás con dinero ficticio: aprendés la dinámica del mercado sin exposición financiera.",
+    desc: "Operas con dinero ficticio: aprendes la dinámica del mercado sin exposición financiera.",
   },
 ];
 
 const FAQS = [
   {
     q: "¿Necesito dinero real para usar Agora?",
-    a: "No. Al registrarte recibís un saldo virtual de $10,000 USD para practicar. Nunca se usa ni se solicita dinero real.",
+    a: "No. Al registrarte recibes un saldo virtual de $10,000 USD para practicar. Nunca se usa ni se solicita dinero real.",
   },
   {
     q: "¿Los precios son reales?",
