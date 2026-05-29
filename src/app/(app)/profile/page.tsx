@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import type { Wallet } from "@/lib/domain/types";
@@ -74,6 +75,29 @@ export default function ProfilePage() {
             </dd>
           </div>
         </dl>
+      </Card>
+
+      <Card>
+        <div className="flex items-start gap-3">
+          <ShieldCheck className="text-brand shrink-0 mt-0.5" size={18} />
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <h3 className="font-semibold">Verificación de identidad (KYC)</h3>
+              <span className="text-xs font-semibold px-2 py-0.5 rounded bg-down-bg text-down">
+                Pendiente
+              </span>
+            </div>
+            <p className="text-sm text-text-muted mt-1 mb-3">
+              Completa la verificación KYC para habilitar las operaciones de
+              compra y venta (RF-16).
+            </p>
+            <Link href="/kyc">
+              <Button variant="secondary" size="sm">
+                Iniciar verificación
+              </Button>
+            </Link>
+          </div>
+        </div>
       </Card>
 
       <Card className="border-down/30">

@@ -3,20 +3,29 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Bell,
   Briefcase,
   History,
   LayoutDashboard,
   LineChart,
+  ShieldCheck,
   User as UserIcon,
+  Wallet as WalletIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/market", label: "Mercado", icon: LineChart },
+  { href: "/wallet", label: "Wallet", icon: WalletIcon },
   { href: "/portfolio", label: "Portfolio", icon: Briefcase },
   { href: "/history", label: "Historial", icon: History },
+  { href: "/alerts", label: "Alertas", icon: Bell },
   { href: "/profile", label: "Perfil", icon: UserIcon },
+];
+
+const adminItems = [
+  { href: "/admin", label: "Panel admin", icon: ShieldCheck },
 ];
 
 export function Sidebar() {
@@ -31,6 +40,29 @@ export function Sidebar() {
       </Link>
       <nav className="flex-1 p-3 space-y-1">
         {items.map(({ href, label, icon: Icon }) => {
+          const active =
+            pathname === href || pathname?.startsWith(href + "/");
+          return (
+            <Link
+              key={href}
+              href={href}
+              className={cn(
+                "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition",
+                active
+                  ? "glass-accent text-text"
+                  : "text-text-muted hover:text-text hover:bg-white/5"
+              )}
+            >
+              <Icon size={18} />
+              {label}
+            </Link>
+          );
+        })}
+
+        <div className="pt-4 pb-1 px-3 text-[10px] font-semibold uppercase tracking-wider text-text-subtle">
+          Administración
+        </div>
+        {adminItems.map(({ href, label, icon: Icon }) => {
           const active =
             pathname === href || pathname?.startsWith(href + "/");
           return (

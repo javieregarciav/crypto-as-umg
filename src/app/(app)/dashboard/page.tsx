@@ -2,17 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { ArrowRight, TrendingDown, TrendingUp, Wallet as WalletIcon } from "lucide-react";
 import { PortfolioDonut } from "@/components/chart/PortfolioDonut";
 import { PriceChange } from "@/components/market/PriceChange";
 import { Card, CardTitle } from "@/components/ui/Card";
 import { usePortfolio } from "@/lib/hooks/usePortfolio";
+import { useTopCoins } from "@/lib/hooks/usePrices";
 import { useSession } from "@/lib/hooks/useSession";
 import { cn, fmtCoinAmount, fmtPrice, fmtUSD } from "@/lib/utils";
 
 export default function DashboardPage() {
   const { user } = useSession();
   const p = usePortfolio();
+  const { coins } = useTopCoins(5);
+  const [now, setNow] = useState<Date | null>(null);
+  useEffect(() => {
+    setNow(new Date());
+    const id = setInterval(() => setNow(new Date()), 30_000);
+    return () => clearInterval(id);
+  }, []);
 
   if (p.loading) {
     return <div className="text-text-muted">Cargando portfolio…</div>;
@@ -29,64 +38,77 @@ export default function DashboardPage() {
   const pnlUp = p.totalPnlUSD >= 0;
 
   return (
-    <div className="space-y-8">
-      {/* Hero with ghost wordmark */}
-      <div className="relative">
-        <div
-          aria-hidden
-          className="wordmark absolute -top-1 left-0 right-0 text-[48px] sm:text-[68px] lg:text-[84px] -z-10"
-        >
-          Dashboard
+    <div className="space-y-6">
+      {/* Editorial header */}
+      <header>
+        <div className="flex items-baseline gap-3 text-[11px] font-mono uppercase tracking-wider text-text-muted">
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-up animate-pulse" />
+            Live
+          </span>
+          <span className="text-text-subtle">·</span>
+          <span>{now ? now.toLocaleTimeString("es", { hour12: false }) : "--:--:--"} GMT-6</span>
+          <span className="text-text-subtle">·</span>
+          <span>{user?.name?.split(" ")[0]}</span>
         </div>
-        <div className="relative pt-4 sm:pt-6 lg:pt-8 flex items-end justify-between flex-wrap gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
-              Hola, {user?.name}
-            </p>
-            <h1 className="text-3xl font-bold mt-1">Tu portfolio</h1>
-          </div>
-          <div className="pill-group">
-            <button data-active="true">24h</button>
-            <button>Semana</button>
-            <button>Mes</button>
-            <button>Año</button>
-          </div>
+        <h1 className="text-[40px] sm:text-[52px] font-bold tracking-tight leading-[0.95] mt-2">
+          Portfolio<span className="text-brand">.</span>
+        </h1>
+        <div className="mt-4 h-px bg-gradient-to-r from-white/15 via-white/5 to-transparent" />
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+          {coins.slice(0, 5).map((c) => (
+            <Link
+              key={c.id}
+              href={`/market/${c.id}`}
+              className="shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] hover:border-white/15 transition text-xs"
+            >
+              <Image src={c.image} alt={c.symbol} width={14} height={14} unoptimized className="rounded-full" />
+              <span className="uppercase font-medium">{c.symbol}</span>
+              <span className="num text-text-muted">{fmtPrice(c.currentPrice)}</span>
+              <span
+                className={cn(
+                  "num text-[10px]",
+                  c.priceChangePct24h >= 0 ? "text-up" : "text-down"
+                )}
+              >
+                {c.priceChangePct24h >= 0 ? "+" : ""}
+                {c.priceChangePct24h.toFixed(2)}%
+              </span>
+            </Link>
+          ))}
         </div>
-      </div>
+      </header>
 
-      {/* Bento: 1 wide hero KPI + 3 small stat tiles */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <Card className="lg:col-span-2 relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-brand/20 blur-3xl"
-          />
-          <div className="relative">
-            <CardTitle>Valor total</CardTitle>
-            <div className="flex items-end gap-4 flex-wrap">
+      {/* Asymmetric bento */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        <Card className="lg:col-span-7">
+          <div className="flex items-start justify-between">
+            <div>
+              <CardTitle>Valor total</CardTitle>
               <div className="text-5xl font-bold num tracking-tight">
                 {fmtUSD(p.totalValueUSD)}
               </div>
               <div
                 className={cn(
-                  "flex items-center gap-1 text-sm num pb-2",
+                  "mt-2 flex items-center gap-1.5 text-sm num",
                   pnlUp ? "text-up" : "text-down"
                 )}
               >
                 {pnlUp ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
                 {fmtUSD(p.totalPnlUSD)}
-                <span className="text-text-muted ml-1">
+                <span className="text-text-muted">
                   ({p.totalPnlPct >= 0 ? "+" : ""}
-                  {p.totalPnlPct.toFixed(2)}%)
+                  {p.totalPnlPct.toFixed(2)}%) · all-time
                 </span>
               </div>
             </div>
-            <p className="text-xs text-text-muted mt-2">
-              USD + criptomonedas · actualizado en vivo
-            </p>
+            <div className="hidden sm:block text-right text-[10px] font-mono uppercase tracking-wider text-text-subtle">
+              <div>Acct · {user?.id?.slice(0, 6).toUpperCase()}</div>
+              <div className="mt-1">USD</div>
+            </div>
           </div>
         </Card>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Card className="!p-4">
             <CardTitle>Saldo USD</CardTitle>
             <div className="text-xl font-bold num flex items-center gap-2">
