@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LogOut, Wallet as WalletIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Logo } from "./Logo";
 import { useSession } from "@/lib/hooks/useSession";
 import { services } from "@/lib/services";
 import { fmtUSD } from "@/lib/utils";
@@ -29,8 +30,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-30 h-14 glass-strong !border-x-0 !border-t-0 px-4 md:px-6 flex items-center justify-between">
-      <div className="md:hidden text-lg font-bold">
-        <span className="text-brand">Agora</span>
+      <div className="md:hidden">
+        <Logo className="text-lg" markClassName="size-5" />
       </div>
       <div className="flex-1" />
       <div className="flex items-center gap-3">
@@ -61,7 +62,7 @@ export function Header() {
         ) : (
           <Link
             href="/login"
-            className="glass-brand px-4 py-1.5 text-sm rounded-md text-white font-semibold"
+            className="glass-brand px-4 py-1.5 text-sm rounded-md text-black font-semibold"
           >
             Iniciar sesión
           </Link>

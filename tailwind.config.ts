@@ -25,8 +25,8 @@ const config: Config = {
           subtle: "#5a5c61",
         },
         brand: {
-          DEFAULT: "#a855f7",
-          hover: "#9333ea",
+          DEFAULT: "#00e676",
+          hover: "#00c853",
         },
         up: {
           DEFAULT: "#22c55e",

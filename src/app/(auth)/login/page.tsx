@@ -12,15 +12,10 @@ import { DEMO_CREDENTIALS } from "@/lib/services/auth.local";
 export default function LoginPage() {
   const router = useRouter();
   const refresh = useSessionStore((s) => s.refresh);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(DEMO_CREDENTIALS.email);
+  const [password, setPassword] = useState(DEMO_CREDENTIALS.password);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-
-  function fillDemo() {
-    setEmail(DEMO_CREDENTIALS.email);
-    setPassword(DEMO_CREDENTIALS.password);
-  }
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -77,23 +72,9 @@ export default function LoginPage() {
         {loading ? "Ingresando…" : "Ingresar"}
       </Button>
 
-      <div className="glass-subtle rounded-md p-3 text-xs text-text-muted space-y-2">
-        <p>
-          ¿Solo quieres echar un vistazo? Usa la cuenta demo:
-          <br />
-          <span className="text-text num">{DEMO_CREDENTIALS.email}</span> ·{" "}
-          <span className="text-text num">{DEMO_CREDENTIALS.password}</span>
-        </p>
-        <Button
-          type="button"
-          variant="secondary"
-          size="sm"
-          className="w-full"
-          onClick={fillDemo}
-        >
-          Rellenar cuenta demo
-        </Button>
-      </div>
+      <p className="text-xs text-text-subtle text-center">
+        Cuenta demo precargada — solo presiona <span className="text-text-muted">Ingresar</span>.
+      </p>
 
       <p className="text-sm text-text-muted text-center">
         ¿No tienes cuenta?{" "}

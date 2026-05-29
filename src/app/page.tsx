@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/layout/Logo";
 import {
   ArrowRight,
   Bell,
@@ -21,9 +22,7 @@ export default function Home() {
       {/* Nav */}
       <header className="sticky top-0 z-30 border-b border-border/60 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
-          <span className="font-display text-xl font-medium tracking-tight">
-            Agora
-          </span>
+          <Logo className="text-xl" markClassName="size-5" />
           <nav className="hidden md:flex items-center gap-9 text-sm text-text-muted">
             <a href="#monedas" className="hover:text-text transition">Mercado</a>
             <a href="#funciones" className="hover:text-text transition">Funcionalidades</a>
@@ -62,7 +61,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-9">
           <Link
             href="/register"
-            className="glass-brand inline-flex items-center justify-center gap-2 text-white font-medium px-6 py-3 rounded-full"
+            className="glass-brand inline-flex items-center justify-center gap-2 text-black font-semibold px-6 py-3 rounded-full"
           >
             Empieza gratis
             <ArrowRight size={16} />
@@ -136,7 +135,7 @@ export default function Home() {
         </p>
         <Link
           href="/register"
-          className="glass-brand inline-flex items-center justify-center gap-2 text-white font-medium px-6 py-3 rounded-full mt-8"
+          className="glass-brand inline-flex items-center justify-center gap-2 text-black font-semibold px-6 py-3 rounded-full mt-8"
         >
           Crea tu cuenta
           <ArrowRight size={16} />
@@ -146,7 +145,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-border/60">
         <div className="max-w-5xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-text-subtle">
-          <span className="font-display font-medium text-text">Agora</span>
+          <Logo className="text-text" markClassName="size-4" />
           <span>
             Proyecto Final · Facultad de Ingeniería en Sistemas · UMG · 2026
           </span>
@@ -293,8 +292,8 @@ function DashboardMock() {
       >
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#a855f7" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+            <stop offset="0%" stopColor="#00e676" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#00e676" stopOpacity="0" />
           </linearGradient>
         </defs>
         <path
@@ -304,7 +303,7 @@ function DashboardMock() {
         <path
           d="M0 60 L40 52 L80 56 L120 38 L160 44 L200 26 L240 30 L280 16 L320 20"
           fill="none"
-          stroke="#a855f7"
+          stroke="#00e676"
           strokeWidth="1.5"
         />
       </svg>

@@ -13,6 +13,7 @@ import {
   Wallet as WalletIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Logo } from "./Logo";
 
 const items = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -34,9 +35,9 @@ export function Sidebar() {
     <aside className="hidden md:flex w-60 shrink-0 flex-col glass-strong !border-y-0 !border-l-0 !rounded-none">
       <Link
         href="/dashboard"
-        className="px-6 py-5 text-2xl font-bold border-b border-border"
+        className="px-6 py-5 border-b border-border"
       >
-        <span className="text-brand">Agora</span>
+        <Logo className="text-2xl" markClassName="size-6" />
       </Link>
       <nav className="flex-1 p-3 space-y-1">
         {items.map(({ href, label, icon: Icon }) => {
