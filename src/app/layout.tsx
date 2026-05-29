@@ -14,9 +14,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CryptoUMG — Simulador de Compra y Venta de Criptomonedas",
+  title: "Agora — Simulador de Compra y Venta de Criptomonedas",
   description:
-    "Prototipo académico (UMG) de exchange de criptomonedas: dashboard, mercado, trading simulado e historial.",
+    "Agora (del griego ἀγορά, «mercado»): prototipo académico (UMG) de exchange de criptomonedas con dashboard, mercado, trading simulado e historial.",
 };
 
 export default function RootLayout({

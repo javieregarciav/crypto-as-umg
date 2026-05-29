@@ -6,9 +6,12 @@ export default function Home() {
       <span className="text-brand text-xs uppercase tracking-[0.3em] mb-4">
         UMG — Proyecto Final
       </span>
-      <h1 className="text-5xl md:text-6xl font-bold mb-4">
-        Crypto<span className="text-brand">UMG</span>
+      <h1 className="text-5xl md:text-6xl font-bold mb-3">
+        <span className="text-brand">Agora</span>
       </h1>
+      <p className="text-xs text-text-subtle italic mb-5">
+        del griego ἀγορά — «mercado»
+      </p>
       <p className="text-text-muted max-w-xl mb-8">
         Simulador de compra y venta de criptomonedas con precios reales de
         CoinGecko. Opera sin riesgo, aprende cómo funciona un exchange.

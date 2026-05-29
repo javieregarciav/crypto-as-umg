@@ -2,12 +2,12 @@
 // In Phase 2 this file disappears — replace `*.local.ts` with `*.http.ts`.
 
 export const STORAGE_KEYS = {
-  users: "cumg.users",
-  session: "cumg.session",
-  wallets: "cumg.wallets",
-  holdings: "cumg.holdings",
-  transactions: "cumg.transactions",
-  seeded: "cumg.seeded",
+  users: "agora.users",
+  session: "agora.session",
+  wallets: "agora.wallets",
+  holdings: "agora.holdings",
+  transactions: "agora.transactions",
+  seeded: "agora.seeded",
 } as const;
 
 function safe(): Storage | null {

@@ -8,7 +8,7 @@ export default function AuthLayout({
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6">
       <Link href="/" className="text-3xl font-bold mb-8">
-        Crypto<span className="text-brand">UMG</span>
+        <span className="text-brand">Agora</span>
       </Link>
       <div className="w-full max-w-sm glass-strong rounded-2xl p-6">
         {children}

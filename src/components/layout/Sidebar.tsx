@@ -36,7 +36,7 @@ export function Sidebar() {
         href="/dashboard"
         className="px-6 py-5 text-2xl font-bold border-b border-border"
       >
-        Crypto<span className="text-brand">UMG</span>
+        <span className="text-brand">Agora</span>
       </Link>
       <nav className="flex-1 p-3 space-y-1">
         {items.map(({ href, label, icon: Icon }) => {

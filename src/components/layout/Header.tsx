@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 h-14 glass-strong !border-x-0 !border-t-0 px-4 md:px-6 flex items-center justify-between">
       <div className="md:hidden text-lg font-bold">
-        Crypto<span className="text-brand">UMG</span>
+        <span className="text-brand">Agora</span>
       </div>
       <div className="flex-1" />
       <div className="flex items-center gap-3">

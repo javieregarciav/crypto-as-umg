@@ -1,4 +1,6 @@
-# CryptoUMG — Simulador de Compra y Venta de Criptomonedas
+# Agora — Simulador de Compra y Venta de Criptomonedas
+
+> **Agora** (del griego ἀγορά, «mercado»).
 
 Proyecto final de la **Facultad de Ingeniería en Sistemas — Universidad Mariano Gálvez de Guatemala**.
 
