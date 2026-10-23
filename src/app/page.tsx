@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden font-sans">
       {/* Nav */}
-      <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-bg">
+      <header className="sticky top-0 z-30 bg-bg">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Logo className="text-xl" markClassName="size-5" />
           <nav className="hidden md:flex items-center gap-9 text-sm text-text-muted">
@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/[0.04]">
+      <footer className="">
         <div className="max-w-5xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-text-subtle">
           <Logo className="text-text" markClassName="size-4" />
           <span>

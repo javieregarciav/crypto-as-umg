@@ -48,7 +48,7 @@ export default function MarketPage() {
       </div>
 
       {error && (
-        <div className="text-down text-sm bg-down-bg border border-down/30 rounded-md px-3 py-2">
+        <div className="text-down text-sm bg-down-bg rounded-md px-3 py-2">
           {error}
         </div>
       )}
@@ -76,7 +76,7 @@ export default function MarketPage() {
             <tbody>
               {loading && coins.length === 0 ? (
                 Array.from({ length: 10 }).map((_, i) => (
-                  <tr key={i} className="border-t border-white/[0.04]">
+                  <tr key={i} className="">
                     <td colSpan={7} className="p-3">
                       <div className="h-6 bg-bg-hover/50 rounded animate-pulse" />
                     </td>
@@ -95,7 +95,7 @@ export default function MarketPage() {
                 filtered.map((c) => (
                   <tr
                     key={c.id}
-                    className="glass-row border-t border-white/[0.04]"
+                    className="glass-row"
                   >
                     <td className="p-3 text-text-muted num">
                       {c.marketCapRank}

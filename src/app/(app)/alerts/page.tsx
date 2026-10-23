@@ -108,7 +108,7 @@ export default function AlertsPage() {
               Crear alerta
             </Button>
           </form>
-          <div className="mt-4 flex items-start gap-2 text-[11px] text-text-subtle border-t border-border pt-3">
+          <div className="mt-4 flex items-start gap-2 text-[11px] text-text-subtle pt-3">
             <Info size={13} className="shrink-0 mt-0.5" />
             <span>
               El disparo de alertas y el envío de notificaciones se implementa
@@ -142,7 +142,7 @@ export default function AlertsPage() {
                   </tr>
                 ) : (
                   alerts.map((a) => (
-                    <tr key={a.id} className="glass-row border-t border-white/[0.04]">
+                    <tr key={a.id} className="glass-row">
                       <td className="p-3 uppercase font-medium">{a.symbol}</td>
                       <td className="p-3 text-text-muted">
                         {a.condition === "ABOVE" ? "Sube de" : "Baja de"}

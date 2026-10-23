@@ -45,35 +45,30 @@ body {
     color: #f4f4f5;
   }
 
-  /* Superficies planas: color sólido + borde fino, sin sombras ni brillos */
+  /* Superficies planas: color sólido, sin bordes, sombras ni brillos */
   .glass {
     background: #131315;
-    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* Sidebar, header, tooltips y menús */
   .glass-strong {
     background: #0e0e10;
-    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* Inputs, chips y controles */
   .glass-subtle {
     background: #19191c;
-    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* Ítem activo / superficie elevada */
   .glass-accent {
     background: #1c1c1f;
-    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* Botón principal: verde menta sólido con texto oscuro */
   .glass-brand {
     background: #3ee5a1;
     color: #06140d !important;
-    border: 1px solid transparent;
     transition: background 150ms ease;
   }
   .glass-brand:hover {
@@ -120,13 +115,10 @@ body {
   }
 
   .glass-hover {
-    transition:
-      background 200ms ease,
-      border-color 200ms ease;
+    transition: background 200ms ease;
   }
   .glass-hover:hover {
     background: #1b1b1e;
-    border-color: rgba(255, 255, 255, 0.1);
   }
 
   /* Tile cuadrado redondeado para íconos de monedas */
@@ -136,6 +128,5 @@ body {
     justify-content: center;
     border-radius: 10px;
     background: #1c1c1f;
-    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 }

@@ -85,7 +85,7 @@ export default function DashboardPage() {
               <Link
                 key={c.id}
                 href={`/market/${c.id}`}
-                className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl glass-subtle hover:border-white/15 transition text-xs"
+                className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl glass-subtle transition text-xs"
               >
                 <Image
                   src={c.image}
@@ -217,7 +217,7 @@ export default function DashboardPage() {
                     {p.rows.slice(0, 5).map((r) => (
                       <tr
                         key={r.holding.coinId}
-                        className="glass-row border-t border-white/[0.04]"
+                        className="glass-row"
                       >
                         <td className="p-3">
                           <Link
@@ -308,7 +308,7 @@ export default function DashboardPage() {
               Aún no tienes movimientos.
             </div>
           ) : (
-            <ul className="divide-y divide-white/[0.04]">
+            <ul className="">
               {tx.slice(0, 5).map((t) => (
                 <li
                   key={t.id}

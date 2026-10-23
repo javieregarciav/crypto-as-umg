@@ -82,7 +82,7 @@ export default function RegisterPage() {
         />
       </div>
       {error && (
-        <div className="text-down text-sm bg-down-bg border border-down/30 rounded-md px-3 py-2">
+        <div className="text-down text-sm bg-down-bg rounded-md px-3 py-2">
           {error}
         </div>
       )}

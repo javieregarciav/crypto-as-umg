@@ -57,7 +57,7 @@ export default function PortfolioPage() {
                 p.rows.map((r) => (
                   <tr
                     key={r.holding.coinId}
-                    className="glass-row border-t border-white/[0.04]"
+                    className="glass-row"
                   >
                     <td className="p-3">
                       <div className="flex items-center gap-3">

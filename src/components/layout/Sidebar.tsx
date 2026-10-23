@@ -32,7 +32,7 @@ const adminItems = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="hidden md:flex w-64 shrink-0 flex-col bg-bg border-r border-white/[0.04] sticky top-0 h-screen">
+    <aside className="hidden md:flex w-64 shrink-0 flex-col bg-bg sticky top-0 h-screen">
       <Link
         href="/dashboard"
         className="px-6 pt-6 pb-5"
@@ -48,7 +48,7 @@ export function Sidebar() {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition border border-transparent",
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition",
                 active
                   ? "glass-accent text-text"
                   : "text-text-subtle hover:text-text-muted hover:bg-white/[0.03]"
@@ -71,7 +71,7 @@ export function Sidebar() {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition border border-transparent",
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition",
                 active
                   ? "glass-accent text-text"
                   : "text-text-subtle hover:text-text-muted hover:bg-white/[0.03]"

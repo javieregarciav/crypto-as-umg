@@ -182,7 +182,7 @@ export function TradePanel({ coin }: { coin: Coin }) {
           </div>
         </div>
 
-        <dl className="text-xs space-y-1 border-t border-border pt-3">
+        <dl className="text-xs space-y-1 pt-3">
           <div className="flex justify-between">
             <dt className="text-text-muted">Precio</dt>
             <dd className="num">{fmtPrice(coin.currentPrice)}</dd>
@@ -204,12 +204,12 @@ export function TradePanel({ coin }: { coin: Coin }) {
         </dl>
 
         {error && (
-          <div className="text-down text-xs bg-down-bg border border-down/30 rounded-md px-2 py-1.5">
+          <div className="text-down text-xs bg-down-bg rounded-md px-2 py-1.5">
             {error}
           </div>
         )}
         {ok && (
-          <div className="text-up text-xs bg-up-bg border border-up/30 rounded-md px-2 py-1.5">
+          <div className="text-up text-xs bg-up-bg rounded-md px-2 py-1.5">
             {ok}
           </div>
         )}

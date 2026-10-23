@@ -71,7 +71,7 @@ export default function HistoryPage() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Buscar por símbolo (btc, eth…)"
-          className="flex-1 sm:max-w-xs h-9 px-3 rounded-xl glass-subtle text-sm outline-none focus:border-brand/50"
+          className="flex-1 sm:max-w-xs h-9 px-3 rounded-xl glass-subtle text-sm outline-none focus:ring-2 focus:ring-brand/30"
         />
       </div>
 
@@ -111,7 +111,7 @@ export default function HistoryPage() {
                 filtered.map((t) => (
                   <tr
                     key={t.id}
-                    className="glass-row border-t border-white/[0.04]"
+                    className="glass-row"
                   >
                     <td className="p-3 text-text-muted">
                       {new Date(t.createdAt).toLocaleString("es", {

@@ -100,7 +100,7 @@ export default function ProfilePage() {
         </div>
       </Card>
 
-      <Card className="border-down/30">
+      <Card className="">
         <div className="flex items-start gap-3">
           <AlertTriangle className="text-down shrink-0 mt-0.5" size={18} />
           <div className="flex-1">

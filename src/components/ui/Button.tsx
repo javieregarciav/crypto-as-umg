@@ -9,7 +9,7 @@ const button = cva(
       variant: {
         primary: "glass-brand",
         secondary: "glass-subtle text-text hover:bg-bg-hover",
-        outline: "border border-white/[0.08] text-text hover:bg-white/[0.04]",
+        outline: "bg-white/[0.04] text-text hover:bg-white/[0.07]",
         ghost: "text-text-muted hover:text-text hover:bg-white/5",
         up: "bg-up text-[#06140d] hover:opacity-90",
         down: "bg-down text-white hover:opacity-90",

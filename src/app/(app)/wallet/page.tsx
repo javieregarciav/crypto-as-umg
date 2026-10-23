@@ -141,7 +141,7 @@ export default function WalletPage() {
               <dd className="mt-1 font-medium">USD</dd>
             </div>
           </dl>
-          <div className="mt-4 flex items-start gap-2 text-xs text-text-subtle border-t border-border pt-3">
+          <div className="mt-4 flex items-start gap-2 text-xs text-text-subtle pt-3">
             <Info size={14} className="shrink-0 mt-0.5" />
             <span>
               Depósitos, retiros y transferencias son funciones del diseño
@@ -179,7 +179,7 @@ export default function WalletPage() {
                 holdings.map((h) => (
                   <tr
                     key={h.coinId}
-                    className="glass-row border-t border-white/[0.04]"
+                    className="glass-row"
                   >
                     <td className="p-3 uppercase font-medium">{h.coinId}</td>
                     <td className="p-3 text-right num">

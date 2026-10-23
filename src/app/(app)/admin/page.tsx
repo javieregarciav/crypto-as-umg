@@ -139,7 +139,7 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {users.map((u) => (
-                  <tr key={u.id} className="glass-row border-t border-white/[0.04]">
+                  <tr key={u.id} className="glass-row">
                     <td className="p-3 font-medium">{u.name}</td>
                     <td className="p-3 text-text-muted hidden sm:table-cell">
                       {u.email}
@@ -227,7 +227,7 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {SEED_TX.map((t) => (
-                  <tr key={t.id} className="glass-row border-t border-white/[0.04]">
+                  <tr key={t.id} className="glass-row">
                     <td className="p-3 text-text-muted">{t.date}</td>
                     <td className="p-3 font-medium">{t.user}</td>
                     <td className="p-3">
@@ -326,7 +326,7 @@ function Stat({
 
 function ReportRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between border-b border-white/5 pb-1.5">
+    <div className="flex items-center justify-between pb-1.5">
       <span className="text-text-muted">{label}</span>
       <span className="num font-medium">{value}</span>
     </div>

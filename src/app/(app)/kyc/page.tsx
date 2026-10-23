@@ -57,10 +57,10 @@ export default function KycPage() {
             <div className="flex flex-col items-center gap-1 flex-1">
               <div
                 className={cn(
-                  "size-9 rounded-full flex items-center justify-center border transition",
+                  "size-9 rounded-full flex items-center justify-center transition",
                   i <= step
-                    ? "glass-accent text-brand border-brand/40"
-                    : "glass-subtle text-text-subtle border-transparent"
+                    ? "bg-brand/15 text-brand"
+                    : "glass-subtle text-text-subtle"
                 )}
               >
                 <Icon size={16} />
@@ -160,7 +160,7 @@ function DropZone({ label }: { label: string }) {
   return (
     <div className="space-y-1">
       <label className="text-xs text-text-muted">{label}</label>
-      <div className="glass-subtle rounded-md border border-dashed border-white/15 p-6 text-center text-xs text-text-subtle cursor-pointer hover:bg-white/5 transition">
+      <div className="glass-subtle rounded-md p-6 text-center text-xs text-text-subtle cursor-pointer hover:bg-white/5 transition">
         Arrastra una imagen o haz clic para subir
       </div>
     </div>
