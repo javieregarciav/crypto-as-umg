@@ -37,7 +37,7 @@ export function Header() {
   }, [user]);
 
   return (
-    <header className="sticky top-0 z-30 h-16 bg-bg px-4 md:px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-30 h-16 backdrop-blur-xl px-4 md:px-6 flex items-center justify-between">
       <div className="md:hidden">
         <Logo className="text-lg" markClassName="size-5" />
       </div>

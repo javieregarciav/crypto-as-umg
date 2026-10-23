@@ -32,7 +32,7 @@ const adminItems = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="hidden md:flex w-64 shrink-0 flex-col bg-bg sticky top-0 h-screen">
+    <aside className="hidden md:flex w-64 shrink-0 flex-col bg-white/[0.015] backdrop-blur-xl sticky top-0 h-screen">
       <Link
         href="/dashboard"
         className="px-6 pt-6 pb-5"

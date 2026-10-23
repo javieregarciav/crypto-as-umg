@@ -13,9 +13,9 @@ import {
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden font-sans">
+    <main className="relative min-h-screen overflow-hidden font-sans bg-aurora">
       {/* Nav */}
-      <header className="sticky top-0 z-30 bg-bg">
+      <header className="sticky top-0 z-30 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Logo className="text-xl" markClassName="size-5" />
           <nav className="hidden md:flex items-center gap-9 text-sm text-text-muted">
