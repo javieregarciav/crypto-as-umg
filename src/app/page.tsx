@@ -16,11 +16,11 @@ export default function Home() {
     <main className="relative min-h-screen overflow-hidden font-sans">
       {/* Un solo halo, muy sutil */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[640px] rounded-full bg-brand/[0.07] blur-[160px]" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[640px] rounded-full bg-brand/[0.05] blur-[160px]" />
       </div>
 
       {/* Nav */}
-      <header className="sticky top-0 z-30 border-b border-border/60 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/[0.04] bg-bg/80 backdrop-blur-xl">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Logo className="text-xl" markClassName="size-5" />
           <nav className="hidden md:flex items-center gap-9 text-sm text-text-muted">
@@ -37,7 +37,7 @@ export default function Home() {
             </Link>
             <Link
               href="/register"
-              className="text-sm font-medium border border-white/15 hover:bg-white/5 px-4 py-2 rounded-full transition"
+              className="text-sm font-medium glass-subtle hover:bg-bg-hover px-4 py-2 rounded-xl transition"
             >
               Crear cuenta
             </Link>
@@ -50,7 +50,7 @@ export default function Home() {
         <span className="text-xs uppercase tracking-[0.25em] text-text-subtle">
           Simulador educativo · Universidad Mariano Gálvez
         </span>
-        <h1 className="font-display text-gradient text-5xl md:text-[3.75rem] leading-[1.05] font-medium tracking-tight mt-6 text-balance pb-1">
+        <h1 className="font-display text-gradient text-5xl md:text-[3.75rem] leading-[1.05] font-semibold tracking-tight mt-6 text-balance pb-1">
           Aprende a operar el mercado cripto sin arriesgar tu dinero
         </h1>
         <p className="text-text-muted text-lg max-w-xl mx-auto mt-7 leading-relaxed">
@@ -61,14 +61,14 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-9">
           <Link
             href="/register"
-            className="glass-brand inline-flex items-center justify-center gap-2 text-white font-semibold px-6 py-3 rounded-full"
+            className="glass-brand inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl"
           >
             Empieza gratis
             <ArrowRight size={16} />
           </Link>
           <Link
             href="/market"
-            className="inline-flex items-center justify-center gap-2 border border-white/15 hover:bg-white/5 px-6 py-3 rounded-full font-medium text-text-muted hover:text-text transition"
+            className="inline-flex items-center justify-center gap-2 glass-subtle hover:bg-bg-hover px-6 py-3 rounded-xl font-medium text-text-muted hover:text-text transition"
           >
             Ver mercado en vivo
           </Link>
@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* Strip de monedas */}
       <section id="monedas" className="max-w-3xl mx-auto px-5 pb-28 text-center">
-        <h2 className="font-display text-gradient text-2xl md:text-3xl font-medium tracking-tight pb-1">
+        <h2 className="font-display text-gradient text-2xl md:text-3xl font-semibold tracking-tight pb-1">
           Las principales criptomonedas, en tiempo real
         </h2>
         <p className="text-text-muted mt-3">
@@ -98,7 +98,7 @@ export default function Home() {
       {/* Funcionalidades */}
       <section id="funciones" className="max-w-5xl mx-auto px-5 pb-28">
         <div className="text-center mb-14">
-          <h2 className="font-display text-gradient text-3xl md:text-4xl font-medium tracking-tight pb-1">
+          <h2 className="font-display text-gradient text-3xl md:text-4xl font-semibold tracking-tight pb-1">
             Todo lo que necesitas para practicar
           </h2>
           <p className="text-text-muted mt-4 max-w-lg mx-auto">
@@ -106,7 +106,7 @@ export default function Home() {
             educativo.
           </p>
         </div>
-        <div className="grid gap-px bg-border/60 rounded-2xl overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
             <Feature key={f.title} {...f} />
           ))}
@@ -115,10 +115,10 @@ export default function Home() {
 
       {/* FAQ */}
       <section id="faq" className="max-w-2xl mx-auto px-5 pb-28">
-        <h2 className="font-display text-gradient text-3xl font-medium tracking-tight text-center mb-12 pb-1">
+        <h2 className="font-display text-gradient text-3xl font-semibold tracking-tight text-center mb-12 pb-1">
           Preguntas frecuentes
         </h2>
-        <div className="divide-y divide-border/60 border-y border-border/60">
+        <div className="space-y-2.5">
           {FAQS.map((f) => (
             <Faq key={f.q} {...f} />
           ))}
@@ -127,7 +127,7 @@ export default function Home() {
 
       {/* CTA final */}
       <section className="max-w-3xl mx-auto px-5 pb-24 text-center">
-        <h2 className="font-display text-gradient text-3xl md:text-4xl font-medium tracking-tight pb-1">
+        <h2 className="font-display text-gradient text-3xl md:text-4xl font-semibold tracking-tight pb-1">
           Tu cuenta demo con $10,000 USD virtuales te espera
         </h2>
         <p className="text-text-muted mt-4">
@@ -135,7 +135,7 @@ export default function Home() {
         </p>
         <Link
           href="/register"
-          className="glass-brand inline-flex items-center justify-center gap-2 text-white font-semibold px-6 py-3 rounded-full mt-8"
+          className="glass-brand inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl mt-8"
         >
           Crea tu cuenta
           <ArrowRight size={16} />
@@ -143,7 +143,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border/60">
+      <footer className="border-t border-white/[0.04]">
         <div className="max-w-5xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-text-subtle">
           <Logo className="text-text" markClassName="size-4" />
           <span>
@@ -224,8 +224,8 @@ const FAQS = [
 
 function CoinChip({ sym, name }: { sym: string; name: string }) {
   return (
-    <div className="flex items-center gap-2 rounded-full border border-border/80 pl-1.5 pr-4 py-1.5">
-      <span className="size-6 rounded-full flex items-center justify-center text-[9px] font-semibold bg-white/[0.06] text-text-muted shrink-0">
+    <div className="flex items-center gap-2.5 rounded-xl glass pl-1.5 pr-4 py-1.5">
+      <span className="coin-tile size-8 text-[9px] font-semibold text-text-muted shrink-0">
         {sym.slice(0, 3)}
       </span>
       <span className="text-sm">{name}</span>
@@ -244,9 +244,11 @@ function Feature({
   desc: string;
 }) {
   return (
-    <div className="bg-bg p-6">
-      <Icon size={20} className="text-brand" strokeWidth={1.5} />
-      <h3 className="font-display font-medium mt-4">{title}</h3>
+    <div className="glass rounded-2xl p-6">
+      <span className="coin-tile size-10">
+        <Icon size={18} className="text-brand" strokeWidth={1.75} />
+      </span>
+      <h3 className="font-display font-semibold mt-4">{title}</h3>
       <p className="text-sm text-text-muted mt-2 leading-relaxed">{desc}</p>
     </div>
   );
@@ -254,7 +256,7 @@ function Feature({
 
 function Faq({ q, a }: { q: string; a: string }) {
   return (
-    <details className="py-5 group">
+    <details className="glass rounded-2xl px-5 py-4 group">
       <summary className="flex items-center justify-between cursor-pointer list-none font-medium">
         {q}
         <ChevronDown
@@ -280,9 +282,9 @@ function DashboardMock() {
       <div className="flex items-end justify-between">
         <div>
           <div className="text-xs text-text-muted">Valor del portafolio</div>
-          <div className="num text-4xl font-semibold mt-1.5">$12,840.55</div>
+          <div className="num text-4xl font-semibold tracking-tight mt-1.5">$12,840.55</div>
         </div>
-        <span className="text-sm font-medium text-up">+4.21%</span>
+        <span className="num text-xs font-semibold text-up bg-up-bg rounded-md px-1.5 py-0.5">+4.21%</span>
       </div>
 
       <svg
@@ -292,10 +294,23 @@ function DashboardMock() {
       >
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0ea271" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#0ea271" stopOpacity="0" />
+            <stop offset="0%" stopColor="#3ee5a1" stopOpacity="0.22" />
+            <stop offset="100%" stopColor="#3ee5a1" stopOpacity="0" />
           </linearGradient>
+          <pattern
+            id="g-hatch"
+            width="6"
+            height="6"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+          >
+            <line x1="0" y1="0" x2="0" y2="6" stroke="#3ee5a1" strokeOpacity="0.14" strokeWidth="1.5" />
+          </pattern>
         </defs>
+        <path
+          d="M0 60 L40 52 L80 56 L120 38 L160 44 L200 26 L240 30 L280 16 L320 20 L320 80 L0 80 Z"
+          fill="url(#g-hatch)"
+        />
         <path
           d="M0 60 L40 52 L80 56 L120 38 L160 44 L200 26 L240 30 L280 16 L320 20 L320 80 L0 80 Z"
           fill="url(#g)"
@@ -303,8 +318,8 @@ function DashboardMock() {
         <path
           d="M0 60 L40 52 L80 56 L120 38 L160 44 L200 26 L240 30 L280 16 L320 20"
           fill="none"
-          stroke="#0ea271"
-          strokeWidth="1.5"
+          stroke="#3ee5a1"
+          strokeWidth="2"
         />
       </svg>
 
@@ -315,7 +330,7 @@ function DashboardMock() {
           { sym: "SOL", name: "Solana", val: "$2,240.13", chg: "-1.2%", up: false },
         ].map((h) => (
           <div key={h.sym} className="flex items-center gap-3 py-2">
-            <span className="size-8 rounded-full flex items-center justify-center text-[10px] font-semibold bg-white/[0.06] text-text-muted">
+            <span className="coin-tile size-9 text-[10px] font-semibold text-text-muted">
               {h.sym}
             </span>
             <div className="flex-1">
@@ -324,7 +339,7 @@ function DashboardMock() {
             </div>
             <div className="text-right">
               <div className="num text-sm">{h.val}</div>
-              <div className={`num text-xs ${h.up ? "text-up" : "text-down"}`}>
+              <div className={`num inline-block mt-0.5 rounded-md px-1.5 py-0.5 text-[11px] font-semibold ${h.up ? "bg-up-bg text-up" : "bg-down-bg text-down"}`}>
                 {h.chg}
               </div>
             </div>

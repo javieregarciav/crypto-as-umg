@@ -77,7 +77,7 @@ export default function AlertsPage() {
             </div>
             <div className="space-y-1">
               <label className="text-xs text-text-muted">Condición</label>
-              <div className="flex gap-1 glass-subtle rounded-md p-1">
+              <div className="flex gap-1 glass-subtle rounded-xl p-1">
                 {(["ABOVE", "BELOW"] as Condition[]).map((c) => (
                   <button
                     key={c}
@@ -124,7 +124,7 @@ export default function AlertsPage() {
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+              <thead className="text-xs text-text-subtle">
                 <tr>
                   <th className="text-left p-3">Activo</th>
                   <th className="text-left p-3">Condición</th>
@@ -142,7 +142,7 @@ export default function AlertsPage() {
                   </tr>
                 ) : (
                   alerts.map((a) => (
-                    <tr key={a.id} className="glass-row border-t border-white/5">
+                    <tr key={a.id} className="glass-row border-t border-white/[0.04]">
                       <td className="p-3 uppercase font-medium">{a.symbol}</td>
                       <td className="p-3 text-text-muted">
                         {a.condition === "ABOVE" ? "Sube de" : "Baja de"}

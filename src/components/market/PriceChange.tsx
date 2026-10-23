@@ -11,8 +11,8 @@ export function PriceChange({
   return (
     <span
       className={cn(
-        "num text-sm font-medium",
-        up ? "text-up" : "text-down",
+        "num inline-flex items-center rounded-md px-1.5 py-0.5 text-xs font-semibold",
+        up ? "bg-up-bg text-up" : "bg-down-bg text-down",
         className
       )}
     >

@@ -28,27 +28,49 @@ export function PortfolioArea({
   const base = total * 0.92;
   const span = total * 0.12;
   const data = SHAPE.map((s, i) => ({ i, v: base + span * s }));
-  const color = up ? "#10b981" : "#ef4444";
+  const color = up ? "#3ee5a1" : "#f05d65";
 
   return (
     <ResponsiveContainer width="100%" height={height}>
       <AreaChart data={data} margin={{ top: 4, right: 0, bottom: 0, left: 0 }}>
         <defs>
           <linearGradient id="pa" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor={color} stopOpacity={0.3} />
+            <stop offset="0%" stopColor={color} stopOpacity={0.22} />
             <stop offset="100%" stopColor={color} stopOpacity={0} />
           </linearGradient>
+          <pattern
+            id="pa-hatch"
+            width="6"
+            height="6"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(45)"
+          >
+            <line x1="0" y1="0" x2="0" y2="6" stroke={color} strokeOpacity={0.14} strokeWidth="1.5" />
+          </pattern>
         </defs>
         <YAxis hide domain={["dataMin", "dataMax"]} />
         <Tooltip
           contentStyle={{
-            background: "#121315",
-            border: "1px solid #26282c",
-            borderRadius: 6,
+            background: "#f4f4f5",
+            border: "none",
+            borderRadius: 8,
             fontSize: 12,
+            fontWeight: 600,
+            padding: "4px 8px",
           }}
+          itemStyle={{ color: "#0a0a0b" }}
+          labelStyle={{ color: "#55555b" }}
+          cursor={{ stroke: "rgba(62,229,161,0.35)", strokeWidth: 1 }}
           labelFormatter={() => ""}
           formatter={(v) => [fmtUSD(Number(v)), "Valor"]}
+        />
+        <Area
+          type="monotone"
+          dataKey="v"
+          stroke="none"
+          fill="url(#pa-hatch)"
+          isAnimationActive={false}
+          tooltipType="none"
         />
         <Area
           type="monotone"
@@ -56,6 +78,7 @@ export function PortfolioArea({
           stroke={color}
           strokeWidth={2}
           fill="url(#pa)"
+          activeDot={{ r: 4, fill: "#f4f4f5", stroke: color, strokeWidth: 2 }}
         />
       </AreaChart>
     </ResponsiveContainer>

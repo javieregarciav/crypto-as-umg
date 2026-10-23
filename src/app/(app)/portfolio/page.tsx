@@ -22,7 +22,7 @@ export default function PortfolioPage() {
       <Card className="p-0 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+            <thead className="text-xs text-text-subtle">
               <tr>
                 <th className="text-left p-3">Activo</th>
                 <th className="text-right p-3">Cantidad</th>
@@ -57,18 +57,20 @@ export default function PortfolioPage() {
                 p.rows.map((r) => (
                   <tr
                     key={r.holding.coinId}
-                    className="glass-row border-t border-white/5"
+                    className="glass-row border-t border-white/[0.04]"
                   >
                     <td className="p-3">
                       <div className="flex items-center gap-3">
-                        <Image
-                          src={r.coin.image}
-                          alt={r.coin.symbol}
-                          width={22}
-                          height={22}
-                          unoptimized
-                          className="rounded-full"
-                        />
+                        <span className="coin-tile size-10 shrink-0">
+                          <Image
+                            src={r.coin.image}
+                            alt={r.coin.symbol}
+                            width={20}
+                            height={20}
+                            unoptimized
+                            className="rounded-full"
+                          />
+                        </span>
                         <div>
                           <div className="font-medium">{r.coin.name}</div>
                           <div className="text-xs uppercase text-text-muted">

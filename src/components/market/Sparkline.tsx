@@ -25,7 +25,7 @@ export function Sparkline({
       return `${x.toFixed(2)},${y.toFixed(2)}`;
     })
     .join(" ");
-  const color = up ? "#10b981" : "#ef4444";
+  const color = up ? "#3ee5a1" : "#f05d65";
   return (
     <svg width={width} height={height} className="overflow-visible">
       <polyline

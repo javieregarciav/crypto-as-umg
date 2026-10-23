@@ -37,14 +37,14 @@ export function Header() {
   }, [user]);
 
   return (
-    <header className="sticky top-0 z-30 h-14 glass-strong !border-x-0 !border-t-0 px-4 md:px-6 flex items-center justify-between">
+    <header className="sticky top-0 z-30 h-16 bg-bg/90 backdrop-blur border-b border-white/[0.04] px-4 md:px-6 flex items-center justify-between">
       <div className="md:hidden">
         <Logo className="text-lg" markClassName="size-5" />
       </div>
       <div className="flex-1" />
       <div className="flex items-center gap-3">
         {balance !== null && (
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-md glass-subtle">
+          <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl glass-subtle">
             <WalletIcon size={14} className="text-text-muted" />
             <span className="num text-sm font-medium">
               {fmtUSD(balance)}
@@ -53,8 +53,8 @@ export function Header() {
         )}
         {user ? (
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center gap-2 rounded-full pl-1 pr-3 py-1 hover:bg-white/5 transition focus:outline-none">
-              <span className="size-7 rounded-full glass-accent flex items-center justify-center text-brand text-xs font-bold uppercase">
+            <DropdownMenuTrigger className="flex items-center gap-2 rounded-xl pl-1 pr-3 py-1 glass-subtle hover:bg-bg-hover transition focus:outline-none">
+              <span className="size-8 rounded-lg bg-brand/15 flex items-center justify-center text-brand text-xs font-bold uppercase">
                 {user.name.slice(0, 1)}
               </span>
               <span className="text-sm text-text-muted hidden sm:block">
@@ -85,7 +85,7 @@ export function Header() {
         ) : (
           <Link
             href="/login"
-            className="glass-brand px-4 py-1.5 text-sm rounded-md text-white font-semibold"
+            className="glass-brand px-4 py-2 text-sm rounded-xl font-semibold"
           >
             Iniciar sesión
           </Link>

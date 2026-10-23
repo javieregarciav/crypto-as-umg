@@ -32,14 +32,14 @@ const adminItems = [
 export function Sidebar() {
   const pathname = usePathname();
   return (
-    <aside className="hidden md:flex w-60 shrink-0 flex-col glass-strong !border-y-0 !border-l-0 !rounded-none">
+    <aside className="hidden md:flex w-64 shrink-0 flex-col bg-bg border-r border-white/[0.04] sticky top-0 h-screen">
       <Link
         href="/dashboard"
-        className="px-6 py-5 border-b border-border"
+        className="px-6 pt-6 pb-5"
       >
-        <Logo className="text-2xl" markClassName="size-6" />
+        <Logo className="text-xl" markClassName="size-6" />
       </Link>
-      <nav className="flex-1 p-3 space-y-1">
+      <nav className="flex-1 px-4 py-2 space-y-1.5">
         {items.map(({ href, label, icon: Icon }) => {
           const active =
             pathname === href || pathname?.startsWith(href + "/");
@@ -48,10 +48,10 @@ export function Sidebar() {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition",
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition border border-transparent",
                 active
                   ? "glass-accent text-text"
-                  : "text-text-muted hover:text-text hover:bg-white/5"
+                  : "text-text-subtle hover:text-text-muted hover:bg-white/[0.03]"
               )}
             >
               <Icon size={18} />
@@ -60,7 +60,7 @@ export function Sidebar() {
           );
         })}
 
-        <div className="pt-4 pb-1 px-3 text-[10px] font-semibold uppercase tracking-wider text-text-subtle">
+        <div className="pt-5 pb-1.5 px-3.5 text-[10px] font-semibold uppercase tracking-wider text-text-subtle">
           Administración
         </div>
         {adminItems.map(({ href, label, icon: Icon }) => {
@@ -71,10 +71,10 @@ export function Sidebar() {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-3 px-3 py-2 rounded-md text-sm transition",
+                "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition border border-transparent",
                 active
                   ? "glass-accent text-text"
-                  : "text-text-muted hover:text-text hover:bg-white/5"
+                  : "text-text-subtle hover:text-text-muted hover:bg-white/[0.03]"
               )}
             >
               <Icon size={18} />
@@ -83,7 +83,7 @@ export function Sidebar() {
           );
         })}
       </nav>
-      <div className="px-6 py-4 text-[10px] text-text-subtle border-t border-border">
+      <div className="mx-4 mb-4 px-4 py-3 rounded-xl glass-subtle text-[10px] text-text-subtle">
         UMG · Proyecto Final · 2026
       </div>
     </aside>

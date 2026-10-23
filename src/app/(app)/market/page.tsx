@@ -56,7 +56,7 @@ export default function MarketPage() {
       <div className="glass rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase tracking-wider bg-white/[0.03] backdrop-blur">
+            <thead className="text-xs text-text-subtle">
               <tr>
                 <th className="text-left p-3 w-12">#</th>
                 <th className="text-left p-3">Nombre</th>
@@ -76,7 +76,7 @@ export default function MarketPage() {
             <tbody>
               {loading && coins.length === 0 ? (
                 Array.from({ length: 10 }).map((_, i) => (
-                  <tr key={i} className="border-t border-white/5">
+                  <tr key={i} className="border-t border-white/[0.04]">
                     <td colSpan={7} className="p-3">
                       <div className="h-6 bg-bg-hover/50 rounded animate-pulse" />
                     </td>
@@ -95,7 +95,7 @@ export default function MarketPage() {
                 filtered.map((c) => (
                   <tr
                     key={c.id}
-                    className="glass-row border-t border-white/5"
+                    className="glass-row border-t border-white/[0.04]"
                   >
                     <td className="p-3 text-text-muted num">
                       {c.marketCapRank}
@@ -105,14 +105,16 @@ export default function MarketPage() {
                         href={`/market/${c.id}`}
                         className="flex items-center gap-3 hover:text-brand"
                       >
-                        <Image
-                          src={c.image}
-                          alt={c.symbol}
-                          width={24}
-                          height={24}
-                          unoptimized
-                          className="rounded-full"
-                        />
+                        <span className="coin-tile size-10 shrink-0">
+                          <Image
+                            src={c.image}
+                            alt={c.symbol}
+                            width={20}
+                            height={20}
+                            unoptimized
+                            className="rounded-full"
+                          />
+                        </span>
                         <div>
                           <div className="font-medium">{c.name}</div>
                           <div className="text-xs text-text-muted uppercase">

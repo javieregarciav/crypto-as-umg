@@ -51,7 +51,7 @@ export default function HistoryPage() {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3">
-        <div className="flex gap-1 glass-subtle rounded-md p-1">
+        <div className="flex gap-1 glass-subtle rounded-xl p-1">
           {(["ALL", "BUY", "SELL"] as Filter[]).map((f) => (
             <button
               key={f}
@@ -71,14 +71,14 @@ export default function HistoryPage() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Buscar por símbolo (btc, eth…)"
-          className="flex-1 sm:max-w-xs h-9 px-3 rounded-md glass-subtle text-sm outline-none focus:border-brand/60 focus:bg-white/5"
+          className="flex-1 sm:max-w-xs h-9 px-3 rounded-xl glass-subtle text-sm outline-none focus:border-brand/50"
         />
       </div>
 
       <Card className="p-0 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+            <thead className="text-xs text-text-subtle">
               <tr>
                 <th className="text-left p-3">Fecha</th>
                 <th className="text-left p-3">Tipo</th>
@@ -111,7 +111,7 @@ export default function HistoryPage() {
                 filtered.map((t) => (
                   <tr
                     key={t.id}
-                    className="glass-row border-t border-white/5"
+                    className="glass-row border-t border-white/[0.04]"
                   >
                     <td className="p-3 text-text-muted">
                       {new Date(t.createdAt).toLocaleString("es", {

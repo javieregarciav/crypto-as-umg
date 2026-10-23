@@ -75,7 +75,7 @@ export default function DashboardPage() {
               GMT-6
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mt-2">
+          <h1 className="text-3xl sm:text-[34px] font-semibold tracking-tight mt-2">
             Hola, {user?.name?.split(" ")[0]}
             <span className="text-brand">.</span>
           </h1>
@@ -85,7 +85,7 @@ export default function DashboardPage() {
               <Link
                 key={c.id}
                 href={`/market/${c.id}`}
-                className="shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] hover:border-white/15 transition text-xs"
+                className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl glass-subtle hover:border-white/15 transition text-xs"
               >
                 <Image
                   src={c.image}
@@ -118,7 +118,7 @@ export default function DashboardPage() {
           <div className="grid lg:grid-cols-2 gap-6 items-center">
             <div>
               <CardTitle>Valor total del portafolio</CardTitle>
-              <div className="text-5xl font-bold num tracking-tight">
+              <div className="text-5xl font-semibold num tracking-tight">
                 {fmtUSD(p.totalValueUSD)}
               </div>
               <div
@@ -202,7 +202,7 @@ export default function DashboardPage() {
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+                  <thead className="text-xs text-text-subtle">
                     <tr>
                       <th className="text-left p-3">Activo</th>
                       <th className="text-right p-3">Cantidad</th>
@@ -217,21 +217,23 @@ export default function DashboardPage() {
                     {p.rows.slice(0, 5).map((r) => (
                       <tr
                         key={r.holding.coinId}
-                        className="glass-row border-t border-white/5"
+                        className="glass-row border-t border-white/[0.04]"
                       >
                         <td className="p-3">
                           <Link
                             href={`/market/${r.coin.id}`}
-                            className="flex items-center gap-2 hover:text-brand"
+                            className="flex items-center gap-3 hover:text-brand"
                           >
-                            <Image
-                              src={r.coin.image}
-                              alt={r.coin.symbol}
-                              width={20}
-                              height={20}
-                              unoptimized
-                              className="rounded-full"
-                            />
+                            <span className="coin-tile size-9 shrink-0">
+                              <Image
+                                src={r.coin.image}
+                                alt={r.coin.symbol}
+                                width={18}
+                                height={18}
+                                unoptimized
+                                className="rounded-full"
+                              />
+                            </span>
                             <span className="font-medium uppercase">
                               {r.coin.symbol}
                             </span>
@@ -306,7 +308,7 @@ export default function DashboardPage() {
               Aún no tienes movimientos.
             </div>
           ) : (
-            <ul className="divide-y divide-white/5">
+            <ul className="divide-y divide-white/[0.04]">
               {tx.slice(0, 5).map((t) => (
                 <li
                   key={t.id}
@@ -314,7 +316,7 @@ export default function DashboardPage() {
                 >
                   <span
                     className={cn(
-                      "text-[10px] font-semibold px-2 py-0.5 rounded shrink-0",
+                      "text-[10px] font-semibold px-2 py-1 rounded-md shrink-0",
                       t.type === "BUY"
                         ? "bg-up-bg text-up"
                         : "bg-down-bg text-down"
@@ -346,14 +348,14 @@ export default function DashboardPage() {
 }
 
 const PALETTE = [
-  "#0ea271",
-  "#14b8a6",
-  "#3b82f6",
-  "#2dd4bf",
-  "#f97316",
-  "#ec4899",
-  "#06b6d4",
-  "#eab308",
+  "#3ee5a1",
+  "#8b7cf6",
+  "#5ac8fa",
+  "#f5a524",
+  "#f05d65",
+  "#2fbf8f",
+  "#c084fc",
+  "#a3a3ab",
 ];
 
 function Kpi({
@@ -375,14 +377,14 @@ function Kpi({
         <CardTitle className="mb-0">{label}</CardTitle>
         <Tooltip>
           <TooltipTrigger asChild>
-            <span className="size-7 -mr-1 -mt-1 rounded-md flex items-center justify-center glass-subtle">
+            <span className="coin-tile size-8 -mr-1 -mt-1">
               {icon}
             </span>
           </TooltipTrigger>
           <TooltipContent className="max-w-48">{hint}</TooltipContent>
         </Tooltip>
       </div>
-      <div className={cn("text-xl font-bold num mt-1.5", valueClass)}>
+      <div className={cn("text-xl font-semibold num mt-1.5", valueClass)}>
         {value}
       </div>
     </Card>

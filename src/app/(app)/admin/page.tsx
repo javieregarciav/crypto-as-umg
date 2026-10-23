@@ -127,7 +127,7 @@ export default function AdminPage() {
         <Card className="p-0 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+              <thead className="text-xs text-text-subtle">
                 <tr>
                   <th className="text-left p-3">Usuario</th>
                   <th className="text-left p-3 hidden sm:table-cell">Correo</th>
@@ -139,7 +139,7 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {users.map((u) => (
-                  <tr key={u.id} className="glass-row border-t border-white/5">
+                  <tr key={u.id} className="glass-row border-t border-white/[0.04]">
                     <td className="p-3 font-medium">{u.name}</td>
                     <td className="p-3 text-text-muted hidden sm:table-cell">
                       {u.email}
@@ -216,7 +216,7 @@ export default function AdminPage() {
         <Card className="p-0 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+              <thead className="text-xs text-text-subtle">
                 <tr>
                   <th className="text-left p-3">Fecha</th>
                   <th className="text-left p-3">Usuario</th>
@@ -227,7 +227,7 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {SEED_TX.map((t) => (
-                  <tr key={t.id} className="glass-row border-t border-white/5">
+                  <tr key={t.id} className="glass-row border-t border-white/[0.04]">
                     <td className="p-3 text-text-muted">{t.date}</td>
                     <td className="p-3 font-medium">{t.user}</td>
                     <td className="p-3">

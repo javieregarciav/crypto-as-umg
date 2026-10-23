@@ -11,31 +11,35 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#000000",
-          elev: "#070708",
-          hover: "#101012",
+          DEFAULT: "#0a0a0b",
+          elev: "#131315",
+          hover: "#1b1b1e",
         },
         border: {
-          DEFAULT: "#26282c",
-          subtle: "#1c1d20",
+          DEFAULT: "#222225",
+          subtle: "#19191c",
         },
         text: {
           DEFAULT: "#f4f4f5",
-          muted: "#8b8d92",
-          subtle: "#5a5c61",
+          muted: "#8a8a90",
+          subtle: "#55555b",
         },
         brand: {
-          DEFAULT: "#0ea271",
-          hover: "#0b8a60",
+          DEFAULT: "#3ee5a1",
+          hover: "#2fcf8d",
         },
         up: {
-          DEFAULT: "#10b981",
-          bg: "rgba(16,185,129,0.12)",
+          DEFAULT: "#3ee5a1",
+          bg: "rgba(62,229,161,0.12)",
         },
         down: {
-          DEFAULT: "#ef4444",
-          bg: "rgba(239,68,68,0.1)",
+          DEFAULT: "#f05d65",
+          bg: "rgba(240,93,101,0.14)",
         },
+      },
+      borderRadius: {
+        xl: "14px",
+        "2xl": "18px",
       },
       fontFamily: {
         sans: [

@@ -10,7 +10,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "glass rounded-xl p-5",
+        "glass rounded-2xl p-5",
         className
       )}
     >
@@ -27,7 +27,7 @@ export function CardTitle({
   children: React.ReactNode;
 }) {
   return (
-    <h2 className={cn("text-sm text-text-muted font-medium mb-2", className)}>
+    <h2 className={cn("text-[13px] text-text-muted font-medium mb-2", className)}>
       {children}
     </h2>
   );

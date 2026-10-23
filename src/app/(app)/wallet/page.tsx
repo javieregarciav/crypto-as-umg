@@ -159,7 +159,7 @@ export default function WalletPage() {
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
-            <thead className="text-xs text-text-muted uppercase bg-white/[0.03] backdrop-blur">
+            <thead className="text-xs text-text-subtle">
               <tr>
                 <th className="text-left p-3">Activo</th>
                 <th className="text-right p-3">Cantidad</th>
@@ -179,7 +179,7 @@ export default function WalletPage() {
                 holdings.map((h) => (
                   <tr
                     key={h.coinId}
-                    className="glass-row border-t border-white/5"
+                    className="glass-row border-t border-white/[0.04]"
                   >
                     <td className="p-3 uppercase font-medium">{h.coinId}</td>
                     <td className="p-3 text-right num">
