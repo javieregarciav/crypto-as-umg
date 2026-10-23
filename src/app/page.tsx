@@ -14,13 +14,8 @@ import {
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden font-sans">
-      {/* Un solo halo, muy sutil */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 size-[640px] rounded-full bg-brand/[0.05] blur-[160px]" />
-      </div>
-
       {/* Nav */}
-      <header className="sticky top-0 z-30 border-b border-white/[0.04] bg-bg/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-bg">
         <div className="max-w-5xl mx-auto px-5 h-16 flex items-center justify-between">
           <Logo className="text-xl" markClassName="size-5" />
           <nav className="hidden md:flex items-center gap-9 text-sm text-text-muted">

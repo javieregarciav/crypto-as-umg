@@ -8,12 +8,6 @@ export default function AuthLayout({
 }) {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center p-6 overflow-hidden">
-      {/* Orbes de color: el liquid glass los difumina por detrás */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-20 left-1/3 size-[380px] rounded-full bg-brand/[0.08] blur-[140px]" />
-        <div className="absolute -bottom-24 right-1/4 size-[340px] rounded-full bg-[#8b7cf6]/[0.06] blur-[140px]" />
-      </div>
-
       {/* Wordmark fantasma editorial */}
       <span
         aria-hidden

@@ -45,68 +45,47 @@ body {
     color: #f4f4f5;
   }
 
-  /* Paneles mate tipo dashboard: carbón, borde fino y brillo superior */
+  /* Superficies planas: color sólido + borde fino, sin sombras ni brillos */
   .glass {
-    background: linear-gradient(180deg, #151517 0%, #111113 100%);
+    background: #131315;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
-      0 12px 32px -16px rgba(0, 0, 0, 0.8);
   }
 
-  /* Sidebar y header: superficie base de la app */
+  /* Sidebar, header, tooltips y menús */
   .glass-strong {
     background: #0e0e10;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   /* Inputs, chips y controles */
   .glass-subtle {
     background: #19191c;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
   }
 
-  /* Ítem activo / superficie elevada (gris, como el nav activo) */
+  /* Ítem activo / superficie elevada */
   .glass-accent {
-    background: linear-gradient(180deg, #1f1f22 0%, #1a1a1d 100%);
+    background: #1c1c1f;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   /* Botón principal: verde menta sólido con texto oscuro */
   .glass-brand {
     background: #3ee5a1;
     color: #06140d !important;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
-      0 8px 24px -10px rgba(62, 229, 161, 0.55);
-    transition:
-      background 180ms ease,
-      box-shadow 180ms ease;
+    border: 1px solid transparent;
+    transition: background 150ms ease;
   }
   .glass-brand:hover {
     background: #5cecb2;
-    box-shadow:
-      inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
-      0 10px 28px -10px rgba(62, 229, 161, 0.7);
   }
 
-  /* Wordmark fantasma detrás de los heroes */
+  /* Wordmark de fondo detrás de los heroes */
   .wordmark {
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 0.85;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.035) 0%,
-      rgba(255, 255, 255, 0) 80%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: rgba(255, 255, 255, 0.02);
     user-select: none;
     pointer-events: none;
   }
@@ -158,6 +137,5 @@ body {
     border-radius: 10px;
     background: #1c1c1f;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 }
