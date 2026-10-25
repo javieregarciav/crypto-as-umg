@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useSessionStore } from "@/lib/hooks/useSession";
 import { services } from "@/lib/services";
-import { DEMO_CREDENTIALS } from "@/lib/services/auth.local";
 
 export default function LoginPage() {
   const router = useRouter();
