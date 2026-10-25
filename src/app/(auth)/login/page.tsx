@@ -19,7 +19,6 @@ export default function LoginPage() {
     setError(null);
     setLoading(true);
     try {
-      await services.auth.login(email, password);
       await refresh();
       router.replace("/dashboard");
     } catch (err) {
