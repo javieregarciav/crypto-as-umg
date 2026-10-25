@@ -12,8 +12,6 @@ import { DEMO_CREDENTIALS } from "@/lib/services/auth.local";
 export default function LoginPage() {
   const router = useRouter();
   const refresh = useSessionStore((s) => s.refresh);
-  const [email, setEmail] = useState(DEMO_CREDENTIALS.email);
-  const [password, setPassword] = useState(DEMO_CREDENTIALS.password);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -40,7 +38,6 @@ export default function LoginPage() {
         <Input
           type="email"
           required
-          value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@correo.com"
         />
@@ -50,7 +47,6 @@ export default function LoginPage() {
         <Input
           type="password"
           required
-          value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="••••••••"
         />
