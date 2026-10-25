@@ -6,11 +6,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { useSessionStore } from "@/lib/hooks/useSession";
-
+import { services } from "@/lib/services";
 
 export default function LoginPage() {
   const router = useRouter();
   const refresh = useSessionStore((s) => s.refresh);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,6 +21,7 @@ export default function LoginPage() {
     setError(null);
     setLoading(true);
     try {
+      await services.auth.login(email, password);
       await refresh();
       router.replace("/dashboard");
     } catch (err) {
@@ -36,6 +39,7 @@ export default function LoginPage() {
         <Input
           type="email"
           required
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="tu@correo.com"
         />
@@ -45,6 +49,7 @@ export default function LoginPage() {
         <Input
           type="password"
           required
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="••••••••"
         />
